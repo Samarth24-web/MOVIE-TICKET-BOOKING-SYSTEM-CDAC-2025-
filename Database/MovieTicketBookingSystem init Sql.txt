@@ -1,33 +1,24 @@
-#databse design for Realtime movie ticket booking system
-
-#creating a database
+-- Creating a database
 CREATE DATABASE MovieBookingDB;
-
-
 
 USE MovieBookingDB;
 
-
-
-#creating role table
+-- Creating role table
 CREATE TABLE Roles (
-    RoleId INT IDENTITY PRIMARY KEY,
+    RoleId INT IDENTITY(1,1) PRIMARY KEY,
     RoleName VARCHAR(50) UNIQUE NOT NULL
 );
 
-#inserting roles in the roles table
+-- Inserting roles in the roles table
 INSERT INTO Roles (RoleName)
 VALUES 
 ('User'),
 ('TheatreManager'),
 ('Admin');
 
-
-
-
-#creating user table
+-- Creating user table
 CREATE TABLE Users (
-    UserId BIGINT IDENTITY PRIMARY KEY,
+    UserId BIGINT IDENTITY(1,1) PRIMARY KEY,
     UserName VARCHAR(150) NOT NULL,
     Email VARCHAR(150) UNIQUE NOT NULL,
     Phone VARCHAR(20) UNIQUE NOT NULL,
@@ -39,12 +30,9 @@ CREATE TABLE Users (
     FOREIGN KEY (RoleId) REFERENCES Roles(RoleId)
 );
 
-
-
-
-#crating city table 
+-- Creating city table 
 CREATE TABLE Cities (
-    CityId BIGINT IDENTITY PRIMARY KEY,
+    CityId BIGINT IDENTITY(1,1) PRIMARY KEY,
     CityName VARCHAR(100) NOT NULL,
     StateName VARCHAR(100) NOT NULL,
     CountryName VARCHAR(100) NOT NULL,
@@ -54,7 +42,7 @@ CREATE TABLE Cities (
     UNIQUE (CityName, StateName, CountryName)
 );
 
-#Adding data in cities table
+-- Adding data in cities table
 INSERT INTO Cities (CityName, StateName, CountryName)
 VALUES
 -- Maharashtra
@@ -218,16 +206,13 @@ VALUES
 ('Itanagar','Arunachal Pradesh','India'),
 ('Gangtok','Sikkim','India');
 
-
-
-
-#Creating theater manager request table
+-- Creating theater manager request table
 CREATE TABLE TheatreManagerRequests (
-    RequestId BIGINT IDENTITY PRIMARY KEY,
+    RequestId BIGINT IDENTITY(1,1) PRIMARY KEY,
     UserId BIGINT NOT NULL,
     CityId BIGINT NOT NULL,
     TheatreName VARCHAR(150) NOT NULL,
-	TheaterAddressUrl VARCHAR(500) NOT NULL UNIQUE ,
+    TheaterAddressUrl VARCHAR(500) NOT NULL UNIQUE,
     Address TEXT NOT NULL,
     GovtIdType VARCHAR(50) NOT NULL,
     GovtIdNumber VARCHAR(100) UNIQUE NOT NULL,
@@ -243,14 +228,11 @@ CREATE TABLE TheatreManagerRequests (
     FOREIGN KEY (ReviewedByAdminId) REFERENCES Users(UserId)
 );
 
-
-
-
-#Creating theater table
+-- Creating theater table
 CREATE TABLE Theatres (
-    TheatreId BIGINT IDENTITY PRIMARY KEY,
+    TheatreId BIGINT IDENTITY(1,1) PRIMARY KEY,
     TheatreName VARCHAR(150) NOT NULL,
-	TheaterAddressUrl VARCHAR(500) NOT NULL UNIQUE ,
+    TheaterAddressUrl VARCHAR(500) NOT NULL UNIQUE,
     Address TEXT NOT NULL,
     CityId BIGINT NOT NULL,
     ManagerId BIGINT NOT NULL,
@@ -261,12 +243,9 @@ CREATE TABLE Theatres (
     FOREIGN KEY (ApprovedByAdminId) REFERENCES Users(UserId)
 );
 
-
-
-
-#creating screen type table
+-- Creating screen type table
 CREATE TABLE ScreenTypes (
-    ScreenTypeId BIGINT IDENTITY PRIMARY KEY,
+    ScreenTypeId BIGINT IDENTITY(1,1) PRIMARY KEY,
     TypeName VARCHAR(50) UNIQUE NOT NULL
 );
 
@@ -275,14 +254,11 @@ VALUES
 ('Normal'),
 ('2D'),
 ('3D'),
-('IMAX'),
+('IMAX');
 
-
-
-
-#Creating screens table
+-- Creating screens table
 CREATE TABLE Screens (
-    ScreenId BIGINT IDENTITY PRIMARY KEY,
+    ScreenId BIGINT IDENTITY(1,1) PRIMARY KEY,
     ScreenName VARCHAR(100) NOT NULL,
     TheatreId BIGINT NOT NULL,
     ScreenTypeId BIGINT NOT NULL,
@@ -292,16 +268,14 @@ CREATE TABLE Screens (
     FOREIGN KEY (ScreenTypeId) REFERENCES ScreenTypes(ScreenTypeId)
 );
 
-
-
-#Creating seat type table
+-- Creating seat type table
 CREATE TABLE SeatTypes (
-    SeatTypeId BIGINT IDENTITY PRIMARY KEY,
+    SeatTypeId BIGINT IDENTITY(1,1) PRIMARY KEY,
     TypeName VARCHAR(50) UNIQUE NOT NULL,
-    BasePrice DECIMAL(10,2) NOT NULL,
+    BasePrice DECIMAL(10,2) NOT NULL
 );
 
-#inserting data in seat type table
+-- Inserting data in seat type table
 INSERT INTO SeatTypes (TypeName, BasePrice)
 VALUES
 ('Regular', 150),
@@ -309,11 +283,9 @@ VALUES
 ('Recliner', 300),
 ('VIP', 500);
 
-
-
-#Creating seat row table
+-- Creating seat row table
 CREATE TABLE SeatRows (
-    SeatRowId BIGINT IDENTITY PRIMARY KEY,
+    SeatRowId BIGINT IDENTITY(1,1) PRIMARY KEY,
     RowName VARCHAR(10) NOT NULL,
     RowOrder INT NOT NULL,
     ScreenId BIGINT NOT NULL,
@@ -321,30 +293,26 @@ CREATE TABLE SeatRows (
     FOREIGN KEY (ScreenId) REFERENCES Screens(ScreenId)
 );
 
-
-
-#Creating seat table
+-- Creating seat table
 CREATE TABLE Seats (
-    SeatId BIGINT IDENTITY PRIMARY KEY,
+    SeatId BIGINT IDENTITY(1,1) PRIMARY KEY,
     SeatNumber VARCHAR(10) NOT NULL,
     SeatRowId BIGINT NOT NULL,
     SeatTypeId BIGINT NOT NULL,
-	Price DECIMAL(10,2) NOT NULL,
-	
+    Price DECIMAL(10,2) NOT NULL,
 
     FOREIGN KEY (SeatRowId) REFERENCES SeatRows(SeatRowId),
     FOREIGN KEY (SeatTypeId) REFERENCES SeatTypes(SeatTypeId)
 );
 
-
-
-#Creating genere table
+-- Creating genre table
 CREATE TABLE Genres (
-    GenreId BIGINT IDENTITY PRIMARY KEY,
+    GenreId BIGINT IDENTITY(1,1) PRIMARY KEY,
     GenreName VARCHAR(100) UNIQUE NOT NULL
 );
 
-#Adding data to the genere tableINSERT INTO Genres (GenreName)
+-- Adding data to the genre table
+INSERT INTO Genres (GenreName)
 VALUES
 -- Core genres
 ('Action'),
@@ -425,11 +393,9 @@ VALUES
 ('Web Series'),
 ('Short Film');
 
-
-
-#Creating Languages table
+-- Creating Languages table
 CREATE TABLE Languages (
-    LanguageId BIGINT IDENTITY PRIMARY KEY,
+    LanguageId BIGINT IDENTITY(1,1) PRIMARY KEY,
     LanguageName VARCHAR(100) UNIQUE NOT NULL
 );
 
@@ -510,11 +476,9 @@ VALUES
 ('Latvian'),
 ('Estonian');
 
-
-
-#creating movies table
+-- Creating movies table
 CREATE TABLE Movies (
-    MovieId BIGINT IDENTITY PRIMARY KEY,
+    MovieId BIGINT IDENTITY(1,1) PRIMARY KEY,
     Title VARCHAR(200) NOT NULL,
     Duration INT NOT NULL,
     Rating DECIMAL(3,1),
@@ -522,7 +486,7 @@ CREATE TABLE Movies (
     ReleaseDate DATE
 );
 
-#Inserting movies records
+-- Inserting movies records
 INSERT INTO Movies (Title, Duration, Rating, Description, ReleaseDate)
 VALUES
 ('Pathaan',146,7.2,'Action spy thriller','2023-01-25'),
@@ -560,9 +524,7 @@ VALUES
 ('Lagaan',224,8.1,'Sports historical','2001-06-15'),
 ('Swades',210,8.2,'Patriotic drama','2004-12-17');
 
-
-
-#creating movie genere mapping table
+-- Creating movie genre mapping table
 CREATE TABLE MovieGenreMap (
     MovieId BIGINT,
     GenreId BIGINT,
@@ -572,7 +534,7 @@ CREATE TABLE MovieGenreMap (
     FOREIGN KEY (GenreId) REFERENCES Genres(GenreId)
 );
 
-#Inserting genere mappings
+-- Inserting genre mappings
 INSERT INTO MovieGenreMap (MovieId, GenreId)
 VALUES
 (1,1),(1,43),     -- Pathaan → Action, Spy
@@ -610,10 +572,7 @@ VALUES
 (29,28),(29,16),  -- Lagaan → Sports, History
 (30,35),(30,4);   -- Swades → Patriotic, Drama
 
-
-
-
-#Creating movie language mapping table
+-- Creating movie language mapping table
 CREATE TABLE MovieLanguageMap (
     MovieId BIGINT,
     LanguageId BIGINT,
@@ -623,7 +582,7 @@ CREATE TABLE MovieLanguageMap (
     FOREIGN KEY (LanguageId) REFERENCES Languages(LanguageId)
 );
 
-#Inserting language Mapping
+-- Inserting language Mapping
 INSERT INTO MovieLanguageMap (MovieId, LanguageId)
 VALUES
 (1,1),(2,5),(3,4),(4,1),(5,4),
@@ -637,11 +596,9 @@ VALUES
 
 (26,1),(27,1),(28,1),(29,1),(30,1);
 
-
-
-#Creating shows table
+-- Creating shows table
 CREATE TABLE Shows (
-    ShowId BIGINT IDENTITY PRIMARY KEY,
+    ShowId BIGINT IDENTITY(1,1) PRIMARY KEY,
     MovieId BIGINT NOT NULL,
     ScreenId BIGINT NOT NULL,
     LanguageId BIGINT NOT NULL,   -- NEW COLUMN
@@ -656,11 +613,9 @@ CREATE TABLE Shows (
     FOREIGN KEY (CreatedByManagerId) REFERENCES Users(UserId)
 );
 
-
-
-#creating bookig TABLE
+-- Creating booking TABLE
 CREATE TABLE Bookings (
-    BookingId BIGINT IDENTITY PRIMARY KEY,
+    BookingId BIGINT IDENTITY(1,1) PRIMARY KEY,
     UserId BIGINT NOT NULL,
     ShowId BIGINT NOT NULL,
     TotalAmount DECIMAL(10,2) NOT NULL,
@@ -673,11 +628,9 @@ CREATE TABLE Bookings (
     FOREIGN KEY (ShowId) REFERENCES Shows(ShowId)
 );
 
-
-
-#creating booking seats table 
+-- Creating booking seats table 
 CREATE TABLE BookingSeats (
-    BookingSeatId BIGINT IDENTITY PRIMARY KEY,
+    BookingSeatId BIGINT IDENTITY(1,1) PRIMARY KEY,
     BookingId BIGINT NOT NULL,
     SeatId BIGINT NOT NULL,
     Price DECIMAL(10,2) NOT NULL,
@@ -686,11 +639,9 @@ CREATE TABLE BookingSeats (
     FOREIGN KEY (SeatId) REFERENCES Seats(SeatId)
 );
 
-
-
-#Creating payment table
+-- Creating payment table
 CREATE TABLE Payments (
-    PaymentId BIGINT IDENTITY PRIMARY KEY,
+    PaymentId BIGINT IDENTITY(1,1) PRIMARY KEY,
     BookingId BIGINT NOT NULL,
     GatewayName VARCHAR(50),
     GatewayOrderId VARCHAR(100),
@@ -707,10 +658,9 @@ CREATE TABLE Payments (
     FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId)
 );
 
-
-#Creating show Seat Staus table
+-- Creating show Seat Status table
 CREATE TABLE ShowSeatStatus (
-    ShowSeatStatusId BIGINT IDENTITY PRIMARY KEY,
+    ShowSeatStatusId BIGINT IDENTITY(1,1) PRIMARY KEY,
     ShowId BIGINT NOT NULL,
     SeatId BIGINT NOT NULL,
     Status VARCHAR(20) NOT NULL,
@@ -730,12 +680,9 @@ CREATE TABLE ShowSeatStatus (
     FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId)
 );
 
-
-
-
-#creating showSwatStatusLogs TABLE
+-- Creating show Seat Status Logs TABLE
 CREATE TABLE SeatStatusLogs (
-    LogId BIGINT IDENTITY PRIMARY KEY,
+    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
     ShowId BIGINT NOT NULL,
     SeatId BIGINT NOT NULL,
     OldStatus VARCHAR(20),
@@ -751,15 +698,3 @@ CREATE TABLE SeatStatusLogs (
     FOREIGN KEY (ChangedByUserId) REFERENCES Users(UserId),
     FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId)
 );
-
-
-
-
-
-
-
-
-
-
-
-
