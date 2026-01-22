@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "MovieTicketBookingSystem.Program\u002B\u003C\u003Ec",
-    "Method": "\u003CMain\u003Eb__0_1",
+    "Method": "\u003CMain\u003Eb__0_2",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -16,6 +16,38 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MovieTicketBookingSystem.controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MovieTicketBookingSystem.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieTicketBookingSystem.controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MovieTicketBookingSystem.DTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MovieTicketBookingSystem.controllers.HomeController",
