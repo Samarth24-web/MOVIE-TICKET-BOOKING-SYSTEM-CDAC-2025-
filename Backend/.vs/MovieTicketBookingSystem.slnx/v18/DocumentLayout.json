@@ -3,13 +3,43 @@
   "WorkspaceRootPath": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\4ovs2sfh..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\models\\mastercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\models\\mastercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\4ovs2sfh..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\data\\moviebookingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\data\\moviebookingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\4ovs2sfh..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\models\\moviegenremap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\models\\moviegenremap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\models\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\models\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\models\\bookingseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\models\\bookingseat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\yg0q2tlb..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|d:\\desktopvirtual\\movieticket booking system\\backend\\movieticketbookingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF60BF-053E-4F94-1286-EA8AB478B3A8}|MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj|solutionrelative:movieticketbookingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,11 +54,126 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SQLQuery3.sql ",
-              "DocumentMoniker": "C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\4ovs2sfh..sql",
-              "ToolTip": "SQLQuery3.sql *",
+              "Title": "MasterContext.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\MasterContext.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Models\\MasterContext.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\MasterContext.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Models\\MasterContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T07:20:44.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MovieGenreMap.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\MovieGenreMap.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Models\\MovieGenreMap.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\MovieGenreMap.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Models\\MovieGenreMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T07:20:06.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookingSeat.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\BookingSeat.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Models\\BookingSeat.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\BookingSeat.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Models\\BookingSeat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T07:17:40.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Models\\Booking.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\Booking.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Models\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T07:17:03.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "yg0q2tlb..sql",
+              "DocumentMoniker": "C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\yg0q2tlb..sql",
+              "ToolTip": "C:\\Users\\SAMARTH\\AppData\\Local\\Temp\\yg0q2tlb..sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-01-21T11:48:42.069Z",
+              "WhenOpened": "2026-01-21T20:59:29.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\appsettings.json",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\appsettings.json",
+              "RelativeToolTip": "MovieTicketBookingSystem\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-21T20:48:43.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\controllers\\HomeController.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\controllers\\HomeController.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T20:48:37.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieBookingDbContext.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Data\\MovieBookingDbContext.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Data\\MovieBookingDbContext.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Data\\MovieBookingDbContext.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Data\\MovieBookingDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T20:48:36.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Program.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Program.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Program.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T20:47:27.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Language.cs",
+              "DocumentMoniker": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\Language.cs",
+              "RelativeDocumentMoniker": "MovieTicketBookingSystem\\Models\\Language.cs",
+              "ToolTip": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\Models\\Language.cs",
+              "RelativeToolTip": "MovieTicketBookingSystem\\Models\\Language.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T20:23:04.165Z",
               "EditorCaption": ""
             }
           ]
