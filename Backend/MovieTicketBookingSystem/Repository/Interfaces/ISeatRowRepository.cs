@@ -14,6 +14,7 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         void RemoveSeatRow(SeatRow seatRow);
 
         void Save();
+
     }
 
 }
