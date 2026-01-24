@@ -48,7 +48,8 @@ namespace MovieTicketBookingSystem
             builder.Services.AddScoped<ITheatreManagerRequestRepository, TheatreManagerRequestRepository>();
             builder.Services.AddScoped<IScreenService, ScreenService>();
             builder.Services.AddScoped<IScreenRepository, ScreenRepository>();
-
+            builder.Services.AddScoped<ISeatRowService, SeatRowService>();
+            builder.Services.AddScoped<ISeatRowRepository, SeatRowRepository>();
 
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
