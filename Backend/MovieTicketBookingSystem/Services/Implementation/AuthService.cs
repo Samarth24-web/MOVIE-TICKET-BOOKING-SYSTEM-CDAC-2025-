@@ -21,9 +21,9 @@ namespace MovieTicketBookingSystem.Services.Implementation
 
         public async Task<AuthResponseDto> Register(RegisterDto dto )
         {
-            if (await _UserService.IsEmailUnique(dto.Email))
+            if (! await _UserService.IsEmailUnique(dto.Email))
                 throw new Exception("EMAIL ALREADY EXISTS!");
-            if (await _UserService.IsPhoneUnique(dto.Phone))
+            if (! await _UserService.IsPhoneUnique(dto.Phone))
                 throw new Exception("PHONE NUMBER ALREADY EXISTS!");
 
             var user = new User

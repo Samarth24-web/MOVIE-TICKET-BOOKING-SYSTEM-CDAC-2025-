@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "MovieTicketBookingSystem/1.0.0": {
         "dependencies": {
+          "AWSSDK.Extensions.NETCore.Setup": "4.0.3.21",
+          "AWSSDK.S3": "4.0.17.3",
           "BCrypt.Net-Next": "4.0.3",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.2",
           "Microsoft.Data.SqlClient": "6.1.4",
@@ -17,6 +19,36 @@
         },
         "runtime": {
           "MovieTicketBookingSystem.dll": {}
+        }
+      },
+      "AWSSDK.Core/4.0.3.10": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.3.10"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/4.0.3.21": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.3.10"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Extensions.NETCore.Setup.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.3.21"
+          }
+        }
+      },
+      "AWSSDK.S3/4.0.17.3": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.3.10"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.17.3"
+          }
         }
       },
       "Azure.Core/1.50.0": {
@@ -769,6 +801,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/4.0.3.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PiGDGvWwHeZqbRVcUVrCs/sOjuMLqnH/VRWHe6yop8ZZG9LXuxL3GsfwbgatfzHuJsf1yhy2DuUu6rO3FulA5g==",
+      "path": "awssdk.core/4.0.3.10",
+      "hashPath": "awssdk.core.4.0.3.10.nupkg.sha512"
+    },
+    "AWSSDK.Extensions.NETCore.Setup/4.0.3.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DwL6NanboPZVxPYR5D5s55ezlh2vhs5C6lzEzqFDoI7fOOmiTZtkfLLDzIXaWxrvw10/KFZfEVFqgT1kVO5nWA==",
+      "path": "awssdk.extensions.netcore.setup/4.0.3.21",
+      "hashPath": "awssdk.extensions.netcore.setup.4.0.3.21.nupkg.sha512"
+    },
+    "AWSSDK.S3/4.0.17.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VBnJ57rB6jM1ZJDVZ1zLAKD/8cp7GfVPvRdF8PGShxcTRPAVQtGEg7QBMOZ5Sd2Sh/TPLSXKCqzlfSKxVnTQBw==",
+      "path": "awssdk.s3/4.0.17.3",
+      "hashPath": "awssdk.s3.4.0.17.3.nupkg.sha512"
     },
     "Azure.Core/1.50.0": {
       "type": "package",

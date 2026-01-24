@@ -59,6 +59,11 @@ namespace MovieTicketBookingSystem.Data
             modelBuilder.Entity<ShowSeatStatus>()
                 .Property(x => x.PriceAtBooking)
                 .HasPrecision(10, 2);
+
+            modelBuilder.Entity<Movie>()
+                .Property(x => x.Rating)
+                .HasPrecision(3, 2);
+
         }
 
     }

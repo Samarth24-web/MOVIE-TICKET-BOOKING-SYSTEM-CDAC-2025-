@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codding\\Movie Ticket Booking System\\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj": {}
+    "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj": {}
   },
   "projects": {
-    "D:\\Codding\\Movie Ticket Booking System\\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj": {
+    "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codding\\Movie Ticket Booking System\\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj",
+        "projectUniqueName": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj",
         "projectName": "MovieTicketBookingSystem",
-        "projectPath": "D:\\Codding\\Movie Ticket Booking System\\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj",
-        "packagesPath": "C:\\Users\\sumit\\.nuget\\packages\\",
-        "outputPath": "D:\\Codding\\Movie Ticket Booking System\\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\\Backend\\MovieTicketBookingSystem\\obj\\",
+        "projectPath": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\MovieTicketBookingSystem.csproj",
+        "packagesPath": "C:\\Users\\SAMARTH\\.nuget\\packages\\",
+        "outputPath": "D:\\DesktopVirtual\\MovieTicket Booking System\\Backend\\MovieTicketBookingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sumit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAMARTH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,6 +50,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "AWSSDK.Extensions.NETCore.Setup": {
+              "target": "Package",
+              "version": "[4.0.3.21, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.17.3, )"
+            },
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
@@ -103,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

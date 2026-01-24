@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MovieTicketBookingSystem.Models
 {
@@ -21,9 +22,11 @@ namespace MovieTicketBookingSystem.Models
         public City City { get; set; }
 
         [ForeignKey("ManagerId")]
+        [JsonIgnore]
         public User Manager { get; set; }
 
         [ForeignKey("ApprovedByAdminId")]
+        [JsonIgnore]
         public User ApprovedByAdmin { get; set; }
 
         public ICollection<Screen> Screens { get; set; }

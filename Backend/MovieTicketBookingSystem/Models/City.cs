@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MovieTicketBookingSystem.Models
 {
@@ -15,6 +16,7 @@ namespace MovieTicketBookingSystem.Models
 
         public bool IsActive { get; set; }
 
+        [JsonIgnore]
         public ICollection<Theatre> Theatres { get; set; }
     }
 

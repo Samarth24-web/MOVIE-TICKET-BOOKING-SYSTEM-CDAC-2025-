@@ -312,3 +312,8 @@ D:\Codding\Movie Ticket Booking System\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\Ba
 D:\Codding\Movie Ticket Booking System\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\Backend\MovieTicketBookingSystem\obj\Debug\net10.0\ref\MovieTicketBookingSystem.dll
 D:\Codding\Movie Ticket Booking System\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\BCrypt.Net-Next.dll
 D:\Codding\Movie Ticket Booking System\MOVIE-TICKET-BOOKING-SYSTEM-CDAC-2025-\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\DesktopVirtual\MovieTicket Booking System\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\BCrypt.Net-Next.dll
+D:\DesktopVirtual\MovieTicket Booking System\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\DesktopVirtual\MovieTicket Booking System\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\AWSSDK.Core.dll
+D:\DesktopVirtual\MovieTicket Booking System\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\AWSSDK.Extensions.NETCore.Setup.dll
+D:\DesktopVirtual\MovieTicket Booking System\Backend\MovieTicketBookingSystem\bin\Debug\net10.0\AWSSDK.S3.dll

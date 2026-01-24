@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieTicketBookingSystem.Data;
 using MovieTicketBookingSystem.Models;
 
@@ -14,6 +15,7 @@ namespace MovieTicketBookingSystem.controllers
             _dbContext = dbContext;
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpGet("index")]
         public List<Language> Index()
         {

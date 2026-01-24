@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MovieTicketBookingSystem.Models
 {
@@ -20,21 +21,23 @@ namespace MovieTicketBookingSystem.Models
         public string GovtIdNumber { get; set; }
         public string ProofDocUrl { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
         public long? ReviewedByAdminId { get; set; }
 
-        public string RejectionReason { get; set; }
+        public string? RejectionReason { get; set; }
         public DateTime RequestedAt { get; set; }
         public DateTime? ReviewedAt { get; set; }
-
+        [JsonIgnore]
         [ForeignKey("UserId")]
-        public User RequestedByUser { get; set; }
+        public User? RequestedByUser { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("CityId")]
-        public City City { get; set; }
+        public City? City { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("ReviewedByAdminId")]
-        public User ReviewedByAdmin { get; set; }
+        public User? ReviewedByAdmin { get; set; }
     }
 
 
