@@ -27,8 +27,9 @@ namespace MovieTicketBookingSystem.controllers
             return Ok(_service.UpdateSeatRowName(seatRowId, rowName));
         }
 
-        [HttpPost("{seatRowId}/seats")]
-        public IActionResult AddSeat(long seatRowId, SeatDto dto)
+        [HttpPost("seats/{seatRowId}")]
+        [Consumes("application/json")]
+        public IActionResult AddSeat(long seatRowId, [FromBody] SeatDto dto)
         {
             return Ok(_service.AddSeat(seatRowId, dto));
         }

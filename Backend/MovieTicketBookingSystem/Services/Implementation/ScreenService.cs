@@ -1,4 +1,5 @@
-﻿using MovieTicketBookingSystem.Models;
+﻿using MovieTicketBookingSystem.DTOs;
+using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Repository.Interfaces;
 using MovieTicketBookingSystem.Services.Interfaces;
 
@@ -7,26 +8,33 @@ namespace MovieTicketBookingSystem.Services.Implementation
     public class ScreenService : IScreenService
     {
         private readonly IScreenRepository _screenRepository;
+        private readonly ITheatreService _theatreService;
 
-        public ScreenService(IScreenRepository screenRepository)
+        public ScreenService(IScreenRepository screenRepository , ITheatreService theatreService)
         {
             _screenRepository = screenRepository;
+            _theatreService = theatreService;
         }
 
-        public Screen CreateScreen(Screen screen)
+        public Screen CreateScreen(CreateScreenDto dto)
         {
-            if (string.IsNullOrEmpty(screen.ScreenName))
+            if (string.IsNullOrEmpty(dto.ScreenName))
                 throw new Exception("ScreenName is required");
 
-            if (screen.TheatreId <= 0)
+            if (dto.TheatreId <= 0  || _theatreService.GetById(dto.TheatreId)==null)
                 throw new Exception("TheatreId is required");
 
-            screen.ScreenId = 0;              
-            screen.TotalSeats = 0;            
-            screen.ScreenTypeId = screen.ScreenTypeId == 0 ? 1 : screen.ScreenTypeId;
+            var screen = new Screen
+            {
+                ScreenName = dto.ScreenName,
+                TheatreId = dto.TheatreId,
+                ScreenTypeId = dto.ScreenTypeId ?? 1,
+                TotalSeats = 0 
+            };
 
             return _screenRepository.Create(screen);
         }
+
 
         public List<Screen> GetScreensByTheatre(long theatreId)
         {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MovieTicketBookingSystem.DTOs;
 using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Services.Interfaces;
 
@@ -17,13 +18,13 @@ namespace MovieTicketBookingSystem.controllers
             _screenService = screenService;
         }
 
-        // POST /api/screens
         [HttpPost]
-        public IActionResult Create([FromBody] Screen screen)
+        public IActionResult Create(CreateScreenDto dto)
         {
-            var created = _screenService.CreateScreen(screen);
+            var created = _screenService.CreateScreen(dto);
             return Ok(created);
         }
+
 
         // GET /api/screens/by-theatre/{theatreId}
         [HttpGet("by-theatre/{theatreId}")]

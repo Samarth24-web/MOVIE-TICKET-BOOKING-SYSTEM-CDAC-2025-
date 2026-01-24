@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieTicketBookingSystem.DTOs;
-using MovieTicketBookingSystem.Services.Implementation;
 using MovieTicketBookingSystem.Services.Interfaces;
 
 namespace MovieTicketBookingSystem.controllers

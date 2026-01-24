@@ -29,10 +29,16 @@ namespace MovieTicketBookingSystem.Repository.Implementation
 
         public Theatre GetById(long id)
         {
-            return _context.Theatres
+            var theatre = _context.Theatres
                 .Include(t => t.City)
                 .FirstOrDefault(t => t.TheatreId == id);
+
+            if (theatre == null)
+                throw new Exception($"Theatre with id {id} not found");
+
+            return theatre;
         }
+
 
         public void Delete(long id)
         {
@@ -43,6 +49,11 @@ namespace MovieTicketBookingSystem.Repository.Implementation
 
             _context.Theatres.Remove(theatre);
             _context.SaveChanges();
+        }
+
+        public Theatre GetByManagerId(long id)
+        {
+            return _context.Theatres.FirstOrDefault(t=>t.ManagerId == id);
         }
     }
 }

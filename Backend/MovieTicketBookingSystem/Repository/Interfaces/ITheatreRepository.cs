@@ -8,5 +8,6 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         List<Theatre> GetAll();
         Theatre GetById(long id);
         void Delete(long id);
+        Theatre GetByManagerId(long id);
     }
 }

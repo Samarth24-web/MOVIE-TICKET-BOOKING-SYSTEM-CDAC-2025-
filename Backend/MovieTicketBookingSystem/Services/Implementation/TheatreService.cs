@@ -27,5 +27,10 @@ namespace MovieTicketBookingSystem.Services.Implementation
         {
             _theatreRepository.Delete(id);
         }
+
+        public Theatre GetByManagerId(long id)
+        {
+            return _theatreRepository.GetByManagerId(id);
+        }
     }
 }

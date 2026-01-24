@@ -27,6 +27,12 @@ namespace MovieTicketBookingSystem.controllers
             return Ok(_service.GetById(id));
         }
 
+        [HttpGet("Manager/{id}")]
+        public IActionResult GetByManegerId(long id)
+        {
+            return Ok(_service.GetByManagerId(id));
+        }
+
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
         public IActionResult Delete(long id)
