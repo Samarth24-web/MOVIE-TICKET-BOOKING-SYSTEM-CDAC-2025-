@@ -11,8 +11,8 @@ namespace MovieTicketBookingSystem.Models
 
         public string ScreenName { get; set; }
         public long TheatreId { get; set; }
-        public long ScreenTypeId { get; set; }
-        public int TotalSeats { get; set; }
+        public long? ScreenTypeId { get; set; }
+        public int? TotalSeats { get; set; }
 
         [ForeignKey("TheatreId")]
         public Theatre Theatre { get; set; }

@@ -107,7 +107,7 @@ namespace MovieTicketBookingSystem.Services.Implementation
             List<MovieResponseDto> movieResponseDtos = movies
                                                             .Select(m =>
                                                             {
-                                                                var dto = Mapper.MovieToMovieResponseDto(m);
+                                                                var dto = MovieMapper.MovieToMovieResponseDto(m);
                                                                 convertMapping(dto); 
                                                                 return dto;
                                                             })
@@ -121,7 +121,7 @@ namespace MovieTicketBookingSystem.Services.Implementation
             List<MovieResponseDto> responseDtos = new List<MovieResponseDto>();
             foreach(Movie m in movies)
             {
-                MovieResponseDto dto = Mapper.MovieToMovieResponseDto(m);
+                MovieResponseDto dto = MovieMapper.MovieToMovieResponseDto(m);
                 convertMapping(dto);
                 responseDtos.Add(dto);
             }
@@ -130,14 +130,14 @@ namespace MovieTicketBookingSystem.Services.Implementation
 
         public MovieResponseDto getMovieBtName(string name)
         {
-            MovieResponseDto m = Mapper.MovieToMovieResponseDto(_movieRepository.findByName(name));
+            MovieResponseDto m = MovieMapper.MovieToMovieResponseDto(_movieRepository.findByName(name));
             convertMapping(m);
             return m;
         }
 
         public MovieResponseDto getMovieByid(int movieId)
         {
-            MovieResponseDto m = Mapper.MovieToMovieResponseDto(_movieRepository.findByID(movieId));
+            MovieResponseDto m = MovieMapper.MovieToMovieResponseDto(_movieRepository.findByID(movieId));
             convertMapping(m);
             return m;
         }

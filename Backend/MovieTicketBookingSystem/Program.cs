@@ -46,6 +46,8 @@ namespace MovieTicketBookingSystem
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
             builder.Services.AddScoped<ITheatreRepository, TheatreRepository>();
             builder.Services.AddScoped<ITheatreManagerRequestRepository, TheatreManagerRequestRepository>();
+            builder.Services.AddScoped<IScreenService, ScreenService>();
+            builder.Services.AddScoped<IScreenRepository, ScreenRepository>();
 
 
 

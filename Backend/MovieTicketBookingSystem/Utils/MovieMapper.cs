@@ -3,12 +3,10 @@ using MovieTicketBookingSystem.Models;
 
 namespace MovieTicketBookingSystem.Utils
 {
-    public class Mapper
+    public static class MovieMapper
     {
-        static Mapper()
+        static MovieMapper()
         { 
-        }
-        public Mapper() { 
         }
 
 
@@ -39,3 +37,6 @@ namespace MovieTicketBookingSystem.Utils
 
     }
 }
+
+
+
