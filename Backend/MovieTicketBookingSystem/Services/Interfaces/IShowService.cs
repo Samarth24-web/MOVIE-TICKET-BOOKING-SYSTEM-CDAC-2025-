@@ -8,6 +8,14 @@ namespace MovieTicketBookingSystem.Services.Interfaces
         ShowSeatLayoutDto GetSeatLayout(long showId);
         List<ShowDto> GetPastShows(long managerId);
         List<ShowDto> GetUpcomingShows(long managerId);
+        ShowDto GetById(long id);
+
+        List<ScreenMovieShowsDto> GetShowsByCityMovieDate(
+                string city,
+                long movieId,
+                DateTime date
+            );
+
     }
 
 }

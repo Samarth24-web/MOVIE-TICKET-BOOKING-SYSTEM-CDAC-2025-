@@ -8,6 +8,11 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         Show GetById(long showId);
         List<Show> GetPastShows(long managerId);
         List<Show> GetUpcomingShows(long managerId);
+        List<Show> GetShowsByCityMovieDate(
+               string cityName,
+               long movieId,
+               DateTime showDate
+           );
     }
 
 }

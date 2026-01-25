@@ -27,29 +27,48 @@ namespace MovieTicketBookingSystem
             options.UseSqlServer("name=MovieTicketBookingDB"));
 
             builder.Services.AddScoped<MovieBookingDbContext>();
+
+            // Auth & User
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IJwtService, JwtService>();
-            builder.Services.AddScoped<IUserService, UserService>();
-            builder.Services.AddScoped<ICityService, CityService>();
+
+            // City & Language
             builder.Services.AddScoped<ICityRepository, CityRepository>();
+            builder.Services.AddScoped<ICityService, CityService>();
             builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
             builder.Services.AddScoped<ILanguageService, LanguageService>();
-            builder.Services.AddScoped<IMovieService, MovieService>();
+
+            // Movie & Genre
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
-            builder.Services.AddScoped<IFileStorageService, S3FileStorageService>();
+            builder.Services.AddScoped<IMovieService, MovieService>();
             builder.Services.AddScoped<IGenreRepository, GenreRepository>();
             builder.Services.AddScoped<IGenreService, GenreService>();
-            builder.Services.AddScoped<ITheatreManageRequestService, TheatreManagerRequestService>();
-            builder.Services.AddScoped<IMovieService, MovieService>();
-            builder.Services.AddScoped<ITheatreService, TheatreService>();
-            builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+
+            // Theatre & Manager Request
             builder.Services.AddScoped<ITheatreRepository, TheatreRepository>();
+            builder.Services.AddScoped<ITheatreService, TheatreService>();
             builder.Services.AddScoped<ITheatreManagerRequestRepository, TheatreManagerRequestRepository>();
-            builder.Services.AddScoped<IScreenService, ScreenService>();
+            builder.Services.AddScoped<ITheatreManageRequestService, TheatreManagerRequestService>();
+
+            // Screen & Seating
             builder.Services.AddScoped<IScreenRepository, ScreenRepository>();
-            builder.Services.AddScoped<ISeatRowService, SeatRowService>();
+            builder.Services.AddScoped<IScreenService, ScreenService>();
             builder.Services.AddScoped<ISeatRowRepository, SeatRowRepository>();
+            builder.Services.AddScoped<ISeatRowService, SeatRowService>();
+            builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+
+            // Show & Seat Status
+            builder.Services.AddScoped<IShowRepository, ShowRepository>();
+            builder.Services.AddScoped<IShowService, ShowService>();
+            builder.Services.AddScoped<IShowSeatStatusRepository, ShowSeatStatusRepository>();
+
+            // File Storage
+            builder.Services.AddScoped<IFileStorageService, S3FileStorageService>();
+
+
+
 
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

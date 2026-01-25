@@ -49,6 +49,26 @@ namespace MovieTicketBookingSystem.Repository.Implementation
                 .OrderBy(s => s.ShowDate)
                 .ToList();
         }
+
+        public List<Show> GetShowsByCityMovieDate(
+    string cityName,
+    long movieId,
+    DateTime showDate)
+        {
+            return _context.Shows
+                .Include(s => s.Movie)
+                .Include(s => s.Screen)
+                    .ThenInclude(sc => sc.Theatre)
+                        .ThenInclude(t => t.City)
+                .Where(s =>
+                    s.MovieId == movieId &&
+                    s.ShowDate.Date == showDate.Date &&
+                    s.Screen.Theatre.City.CityName == cityName
+                )
+                .ToList();
+        }
+
+
     }
 
 }
