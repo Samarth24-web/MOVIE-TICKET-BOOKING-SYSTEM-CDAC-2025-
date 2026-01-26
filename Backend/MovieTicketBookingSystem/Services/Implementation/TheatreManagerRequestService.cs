@@ -35,5 +35,10 @@ namespace MovieTicketBookingSystem.Services.Implementation
         {
             _theaterManagerRequestRepository.Reject(requestId, reason, adminId);
         }
+
+        public object? GetByUser(long userId)
+        {
+            return _theaterManagerRequestRepository.GetByUser(userId);
+        }
     }
 }

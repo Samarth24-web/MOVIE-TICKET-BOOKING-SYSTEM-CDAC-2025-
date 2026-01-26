@@ -118,5 +118,41 @@ namespace MovieTicketBookingSystem.Services.Implementation
 
             _bookingRepo.Update(booking);
         }
+
+        public List<object> GetBookingsByUser(long userId)
+        {
+            var bookings = _bookingRepo.GetBookingsByUser(userId);
+
+            return bookings.Select(b => new
+            {
+                b.BookingId,
+                MovieName = b.Show.Movie.Title,
+                TheatreName = b.Show.Screen.Theatre.TheatreName,
+                TheatreUrl = b.Show.Screen.Theatre.TheaterAddressUrl,
+                ShowDate = b.Show.ShowDate,
+                b.Show.StartTime,
+                b.Show.EndTime,
+                Seats = b.BookingSeats.Select(x => x.ShowSeatStatus.Seat.SeatNumber),
+                b.TotalAmount,
+                b.Status,
+                b.BookedAt
+            }).ToList<object>();
+        }
+
+        public object GetBookingDetails(long bookingId)
+        {
+            var b = _bookingRepo.GetBookingDetails(bookingId);
+
+            return new
+            {
+                b.BookingId,
+                b.TotalAmount,
+                b.Status,
+                b.BookedAt,
+                Movie = b.Show.Movie.Title,
+                Theatre = b.Show.Screen.Theatre.TheatreName,
+                Seats = b.BookingSeats.Select(s => s.ShowSeatStatus.Seat.SeatNumber)
+            };
+        }
     }
 }

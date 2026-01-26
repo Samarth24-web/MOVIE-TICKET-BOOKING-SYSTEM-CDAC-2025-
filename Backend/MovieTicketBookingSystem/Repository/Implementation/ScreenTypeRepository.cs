@@ -4,23 +4,18 @@ using MovieTicketBookingSystem.Repository.Interfaces;
 
 namespace MovieTicketBookingSystem.Repository.Implementation
 {
-    public class GenreRepository : IGenreRepository
+    public class ScreenTypeRepository :IScreenTypeRepository
     {
         private readonly MovieBookingDbContext _context;
 
-        public GenreRepository(MovieBookingDbContext context)
+        public ScreenTypeRepository(MovieBookingDbContext context)
         {
             _context = context;
         }
 
-        public List<Genre> FindAll()
+        public List<ScreenType> GetAll()
         {
-            return _context.Genres.ToList();
-        }
-
-        public Genre findById(long genreId)
-        {
-            return _context.Genres.FirstOrDefault(g=>g.GenreId==genreId);
+            return _context.ScreenTypes.ToList();
         }
     }
 }

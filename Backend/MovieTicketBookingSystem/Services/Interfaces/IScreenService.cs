@@ -9,6 +9,7 @@ namespace MovieTicketBookingSystem.Services.Interfaces
         List<Screen> GetScreensByTheatre(long theatreId);
         void UpdateScreen(long screenId, string ScreenName);
         void DeleteScreen(long screenId);
+        List<Screen>? GetByManager(long managerId);
     }
 
 

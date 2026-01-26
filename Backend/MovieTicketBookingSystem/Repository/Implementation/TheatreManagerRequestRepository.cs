@@ -77,5 +77,15 @@ namespace MovieTicketBookingSystem.Repository.Implementation
 
             _context.SaveChanges();
         }
+
+        public TheatreManagerRequest GetByUser(long userId)
+        {
+            return _context?.TheatreManagerRequests
+                .Where(r => r.UserId == userId)
+                .OrderByDescending(r => r.RequestedAt)
+                .FirstOrDefault();
+        }
+
+
     }
 }

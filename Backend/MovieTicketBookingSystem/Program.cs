@@ -81,6 +81,9 @@ namespace MovieTicketBookingSystem
             builder.Services.AddScoped<IBookingSeatRepository, BookingSeatRepository>();
             builder.Services.AddScoped<ISeatStatusLogRepository, SeatStatusLogRepository>();
             builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+            builder.Services.AddScoped<IScreenTypeRepository, ScreenTypeRepository>();
+            builder.Services.AddScoped<ISeatTypeRepository, SeatTypeRepository>();
+
 
             // ================= SERVICES =================
 
@@ -100,6 +103,8 @@ namespace MovieTicketBookingSystem
             builder.Services.AddScoped<IPaymentService, PaymentService>();
             builder.Services.AddScoped<ISeatHistoryService, SeatHistoryService>();
             builder.Services.AddScoped<IFileStorageService, S3FileStorageService>();
+            builder.Services.AddScoped<IScreenTypeService, ScreenTypeService>();
+            builder.Services.AddScoped<ISeatTypeService, SeatTypeService>();
 
             // Payment Gateway
             builder.Services.AddScoped<IPaymentGateway, RazorpayGateway>();

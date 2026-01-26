@@ -28,5 +28,10 @@ namespace MovieTicketBookingSystem.Services.Implementation
         {
             return _UserRepository.findByEmail(email);
         }
+
+        public User GetById(long userId)
+        {
+            return _UserRepository.GetById(userId);
+        }
     }
 }

@@ -6,5 +6,8 @@ namespace MovieTicketBookingSystem.Services.Interfaces
     {
         BookingResultDto CreateBooking(CreateBookingDto dto);
         void CancelBooking(CancelBookingDto dto);
+        List<object> GetBookingsByUser(long userId);
+        object GetBookingDetails(long bookingId);
+
     }
 }

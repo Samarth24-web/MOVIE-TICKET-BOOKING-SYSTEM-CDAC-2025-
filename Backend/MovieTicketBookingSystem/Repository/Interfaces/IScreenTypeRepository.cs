@@ -2,9 +2,8 @@
 
 namespace MovieTicketBookingSystem.Repository.Interfaces
 {
-    public interface IGenreRepository
+    public interface IScreenTypeRepository
     {
-        List<Genre> FindAll();
-        Genre findById(long genreId);
+        List<ScreenType> GetAll();
     }
 }

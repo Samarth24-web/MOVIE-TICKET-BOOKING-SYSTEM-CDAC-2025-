@@ -9,5 +9,7 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         void Update(Booking booking);
         List<Booking> GetExpiredPendingBookings(DateTime expiryTime);
         void MarkCancelled(long bookingId);
+        List<Booking> GetBookingsByUser(long userId);
+        Booking GetBookingDetails(long bookingId);
     }
 }

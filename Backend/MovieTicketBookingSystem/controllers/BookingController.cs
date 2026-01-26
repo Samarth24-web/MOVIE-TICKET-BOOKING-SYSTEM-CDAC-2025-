@@ -28,5 +28,18 @@ namespace MovieTicketBookingSystem.controllers
             _bookingService.CancelBooking(dto);
             return Ok(new { Message = "Booking cancelled successfully" });
         }
+
+        [HttpGet("user/{userId}")]
+        public IActionResult GetUserBookings(long userId)
+        {
+            return Ok(_bookingService.GetBookingsByUser(userId));
+        }
+
+        [HttpGet("{bookingId}")]
+        public IActionResult GetBooking(long bookingId)
+        {
+            return Ok(_bookingService.GetBookingDetails(bookingId));
+        }
+
     }
 }

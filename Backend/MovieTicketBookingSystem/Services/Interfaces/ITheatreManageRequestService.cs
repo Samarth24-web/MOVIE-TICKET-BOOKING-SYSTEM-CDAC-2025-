@@ -8,5 +8,6 @@ namespace MovieTicketBookingSystem.Services.Interfaces
         List<TheatreManagerRequest> GetAllRequests();
         void Approve(long requestId, long adminId);
         void Reject(long requestId, string reason, long adminId);
+        object? GetByUser(long userId);
     }
 }

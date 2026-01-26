@@ -57,6 +57,11 @@ namespace MovieTicketBookingSystem.Services.Implementation
         {
             _screenRepository.Delete(screenId);
         }
+
+        public List<Screen>? GetByManager(long managerId)
+        {
+            return _screenRepository.GetByManager(managerId);
+        }
     }
 
 

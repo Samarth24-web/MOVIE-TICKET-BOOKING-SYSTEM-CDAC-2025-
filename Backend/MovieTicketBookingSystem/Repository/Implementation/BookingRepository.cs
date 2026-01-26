@@ -55,5 +55,25 @@ namespace MovieTicketBookingSystem.Repository.Implementation
             _db.SaveChanges();
         }
 
+        public List<Booking> GetBookingsByUser(long userId)
+        {
+            return _db.Bookings
+                .Include(b => b.Show)
+                    .ThenInclude(s => s.Movie)
+                .Include(b => b.Show)
+                    .ThenInclude(s => s.Screen)
+                        .ThenInclude(sc => sc.Theatre)
+                .Include(b => b.BookingSeats)
+                    .ThenInclude(bs => bs.ShowSeatStatus)
+                        .ThenInclude(ss => ss.Seat)
+                .Where(b => b.UserId == userId)
+                .OrderByDescending(b => b.CreatedAt)
+                .ToList();
+        }
+
+        public Booking GetBookingDetails(long bookingId)
+        {
+            return _db.Bookings.FirstOrDefault(b=>b.BookingId== bookingId);
+        }
     }
 }

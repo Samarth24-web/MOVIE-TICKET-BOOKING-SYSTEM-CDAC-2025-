@@ -2,9 +2,8 @@
 
 namespace MovieTicketBookingSystem.Services.Interfaces
 {
-    public interface IGenreService
+    public interface ISeatTypeService
     {
-        List<Genre>? GetAll();
-        Genre getGenereById(long genreId);
+        List<SeatType> GetAll();
     }
 }

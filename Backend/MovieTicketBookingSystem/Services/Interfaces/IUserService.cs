@@ -8,5 +8,6 @@ namespace MovieTicketBookingSystem.Services.Interfaces
         Task<bool> IsPhoneUnique(string phone);
         Task<User> AddUser(User user);
         Task<User> GetUserByEmail(string email);
+        User GetById(long userId);
     }
 }
