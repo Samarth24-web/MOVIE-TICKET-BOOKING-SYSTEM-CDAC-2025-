@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieTicketBookingSystem.Data;
-using MovieTicketBookingSystem.DTOs;
+using MovieTicketBookingSystem.DTOs.Auth;
 using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Services.Implementation;
 using MovieTicketBookingSystem.Services.Interfaces;

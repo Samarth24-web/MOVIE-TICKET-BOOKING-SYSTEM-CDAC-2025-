@@ -1,4 +1,5 @@
-﻿using MovieTicketBookingSystem.DTOs;
+﻿using MovieTicketBookingSystem.DTOs.Show;
+using ScreenMovieShowsDto = MovieTicketBookingSystem.DTOs.Screen.ScreenMovieShowsDto;
 
 namespace MovieTicketBookingSystem.Services.Interfaces
 {

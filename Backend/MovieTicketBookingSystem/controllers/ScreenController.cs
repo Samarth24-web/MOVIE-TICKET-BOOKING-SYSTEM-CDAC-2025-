@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MovieTicketBookingSystem.DTOs;
+using MovieTicketBookingSystem.DTOs.Screen;
 using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Services.Interfaces;
 

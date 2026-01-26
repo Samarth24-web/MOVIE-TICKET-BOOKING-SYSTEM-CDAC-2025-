@@ -1,6 +1,7 @@
-﻿using MovieTicketBookingSystem.DTOs;
+﻿using MovieTicketBookingSystem.DTOs.Screen;
+using MovieTicketBookingSystem.DTOs.Seat;
+using MovieTicketBookingSystem.DTOs.Show;
 using MovieTicketBookingSystem.Models;
-using MovieTicketBookingSystem.Repository.Implementation;
 using MovieTicketBookingSystem.Repository.Interfaces;
 using MovieTicketBookingSystem.Services.Interfaces;
 using MovieTicketBookingSystem.Utils;
@@ -130,7 +131,7 @@ namespace MovieTicketBookingSystem.Services.Implementation
                 {
                     var firstShow = screenGroup.First();
 
-                    return new ScreenMovieShowsDto
+                    return new DTOs.Screen.ScreenMovieShowsDto
                     {
                         TheatreId = firstShow.Screen.Theatre.TheatreId,
                         TheatreName = firstShow.Screen.Theatre.TheatreName,
@@ -158,6 +159,7 @@ namespace MovieTicketBookingSystem.Services.Implementation
             return result;
         }
 
+        
     }
 
 }

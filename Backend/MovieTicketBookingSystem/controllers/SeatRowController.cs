@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieTicketBookingSystem.DTOs;
+using MovieTicketBookingSystem.DTOs.Seat;
 using MovieTicketBookingSystem.Services.Interfaces;
 
 namespace MovieTicketBookingSystem.controllers

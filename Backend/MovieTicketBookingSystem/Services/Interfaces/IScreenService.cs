@@ -1,4 +1,4 @@
-﻿using MovieTicketBookingSystem.DTOs;
+﻿using MovieTicketBookingSystem.DTOs.Screen;
 using MovieTicketBookingSystem.Models;
 
 namespace MovieTicketBookingSystem.Services.Interfaces
