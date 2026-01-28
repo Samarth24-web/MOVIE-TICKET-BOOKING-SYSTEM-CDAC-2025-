@@ -29,9 +29,18 @@ namespace MovieTicketBookingSystem
             // Controllers + Filters
             builder.Services.AddControllers(options =>
             {
-                options.Filters.Add<ExceptionHandlingFilter>();
                 options.Filters.Add<TransactionFilter>();
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    policy => policy
+                        .WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials());
+            });
+
 
             // DbContext
             builder.Services.AddDbContext<MovieBookingDbContext>(options =>
@@ -148,6 +157,8 @@ namespace MovieTicketBookingSystem
 
             var app = builder.Build();
 
+
+            app.UseCors("AllowFrontend");
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -11,6 +11,7 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         List<ShowSeatStatus> GetExpiredLockedSeats(DateTime currentTime);
         List<ShowSeatStatus> GetSeatsByBookingId(long bookingId);
         void Update(ShowSeatStatus seatStatus);
+        ShowSeatStatus getById(long id);
     }
 
 }

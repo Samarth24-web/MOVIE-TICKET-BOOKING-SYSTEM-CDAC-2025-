@@ -1,6 +1,7 @@
 ﻿using MovieTicketBookingSystem.Configuration;
 using Razorpay;
 using Razorpay.Api;
+using Razorpay.Api.Errors;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -25,7 +26,8 @@ namespace MovieTicketBookingSystem.Infrastructure.PaymentGateways
             {
                 { "amount", (int)(amount * 100) },
                 { "currency", currency },
-                { "receipt", receiptId }
+                { "receipt", receiptId },
+                { "payment_capture", 1 }
             };
 
             var order = _client.Order.Create(options);
@@ -37,21 +39,25 @@ namespace MovieTicketBookingSystem.Infrastructure.PaymentGateways
             string paymentId,
             string signature)
         {
-            var payload = $"{orderId}|{paymentId}";
-            var secret = _config.KeySecret;
 
-            var generatedSignature = ComputeHmacSha256(payload, secret);
 
-            return generatedSignature == signature;
+            Dictionary< string, string> attributes = new Dictionary<string, string>
+                    {
+                        { "razorpay_payment_id", paymentId },
+                        { "razorpay_order_id", orderId },
+                        { "razorpay_signature", signature }
+                    };
+    
+            try
+            {
+                Razorpay.Api.Utils.verifyPaymentSignature(attributes);
+                return true;
+            }
+            catch (SignatureVerificationError)
+            {
+                return false;
+            }
         }
-
-        private string ComputeHmacSha256(string data, string secret)
-        {
-            using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(secret));
-            var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(data));
-            return Convert.ToBase64String(hash);
-        }
-
         public string FetchPaymentStatus(string paymentId)
         {
             var payment = _client.Payment.Fetch(paymentId);

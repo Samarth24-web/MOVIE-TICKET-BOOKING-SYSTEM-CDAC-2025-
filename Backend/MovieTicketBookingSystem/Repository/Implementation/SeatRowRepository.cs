@@ -18,6 +18,7 @@ namespace MovieTicketBookingSystem.Repository.Implementation
         {
             return _context.SeatRows
                 .Include(r => r.Seats)
+                .Include(r=>r.Screen)
                 .FirstOrDefault(r => r.SeatRowId == seatRowId);
         }
 
@@ -47,7 +48,10 @@ namespace MovieTicketBookingSystem.Repository.Implementation
 
         public void AddSeatRow(SeatRow seatRow)
         {
+             Screen s = _context.Screens.Find(seatRow.ScreenId);
+            s.TotalSeats+=seatRow.Seats.Count;
             _context.SeatRows.Add(seatRow);
+            _context.SaveChanges();
         }
 
         public void AddSeat(Seat seat)

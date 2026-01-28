@@ -4,9 +4,10 @@ using MovieTicketBookingSystem.Services.Interfaces;
 
 namespace MovieTicketBookingSystem.controllers
 {
+    [ApiController]
+    [Route("api/genres")]
     public class GenreController : Controller
     {
-
         private readonly IGenreService _genreService;
 
         public GenreController(IGenreService genreService)

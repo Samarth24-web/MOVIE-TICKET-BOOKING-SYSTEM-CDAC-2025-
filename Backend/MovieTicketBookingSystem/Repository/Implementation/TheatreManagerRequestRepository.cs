@@ -45,7 +45,7 @@ namespace MovieTicketBookingSystem.Repository.Implementation
                 Address = req.Address,
                 CityId = req.CityId,
                 ManagerId = req.UserId,
-                ApprovedByAdminId = adminId
+                ApprovedByAdminId = adminId,
             };
 
             _context.Theatres.Add(theatre);

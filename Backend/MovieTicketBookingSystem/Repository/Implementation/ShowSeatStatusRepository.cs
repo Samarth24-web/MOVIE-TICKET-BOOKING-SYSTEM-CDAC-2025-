@@ -67,5 +67,9 @@ namespace MovieTicketBookingSystem.Repository.Implementation
             _context.SaveChanges();
         }
 
+        public ShowSeatStatus getById(long id)
+        {
+            return _context.ShowSeatStatuses.Find(id);
+        }
     }
 }

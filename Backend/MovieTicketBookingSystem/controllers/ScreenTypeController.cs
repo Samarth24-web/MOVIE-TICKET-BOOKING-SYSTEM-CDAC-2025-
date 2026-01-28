@@ -4,7 +4,7 @@ using MovieTicketBookingSystem.Services.Interfaces;
 namespace MovieTicketBookingSystem.controllers
 {
     [ApiController]
-    [Route("api/seat-types")]
+    [Route("api/screen-types")]
     public class ScreenTypeController : Controller
     {
         private readonly IScreenTypeService _screenTypeService;

@@ -32,11 +32,10 @@ namespace MovieTicketBookingSystem.Services.Implementation
         }
         public async Task<long> CreateMovieAsync(CreateMovieDto dto)
         {
-            using var transaction = await _context.Database.BeginTransactionAsync();
-
             try
             {
-                var imageUrl = await _fileStorageService.UploadFileAsync(dto.Image, "movies");
+                var imageUrl = await _fileStorageService
+                    .UploadFileAsync(dto.Image, "movies");
 
                 var movie = new Movie
                 {
@@ -49,48 +48,42 @@ namespace MovieTicketBookingSystem.Services.Implementation
                 };
 
                 _context.Movies.Add(movie);
-                await _context.SaveChangesAsync(); // MovieId generated here
+                await _context.SaveChangesAsync(); // MovieId generated
 
-                // 3. Insert Genre mappings
-                if (dto.GenreIds != null && dto.GenreIds.Any())
+                if (dto.GenreIds?.Any() == true)
                 {
-                    var genreMappings = dto.GenreIds.Select(genreId =>
+                    var genreMappings = dto.GenreIds.Select(id =>
                         new MovieGenreMap
                         {
                             MovieId = movie.MovieId,
-                            GenreId = genreId
+                            GenreId = id
                         });
 
                     _context.MovieGenreMaps.AddRange(genreMappings);
                 }
 
-                // 4. Insert Language mappings
-                if (dto.LanguageIds != null && dto.LanguageIds.Any())
+                if (dto.LanguageIds?.Any() == true)
                 {
-                    var languageMappings = dto.LanguageIds.Select(languageId =>
+                    var languageMappings = dto.LanguageIds.Select(id =>
                         new MovieLanguageMap
                         {
                             MovieId = movie.MovieId,
-                            LanguageId = languageId
+                            LanguageId = id
                         });
 
                     _context.MovieLanguageMaps.AddRange(languageMappings);
                 }
 
-                // 5. Save mappings
                 await _context.SaveChangesAsync();
-
-                // 6. Commit transaction
-                await transaction.CommitAsync();
 
                 return movie.MovieId;
             }
             catch
             {
-                await transaction.RollbackAsync();
-                throw;
+                throw; // let controller handle error
             }
         }
+
 
         public List<string> findBySearchStartLetters(string startsWith)
         {

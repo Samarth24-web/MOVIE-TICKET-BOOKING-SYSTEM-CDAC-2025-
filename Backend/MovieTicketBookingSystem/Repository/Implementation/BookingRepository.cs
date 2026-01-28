@@ -32,6 +32,7 @@ namespace MovieTicketBookingSystem.Repository.Implementation
         public Booking GetById(long bookingId)
         {
             return _db.Bookings
+                .Include(x=>x.BookingSeats)
                 .First(x => x.BookingId == bookingId);
         }
 

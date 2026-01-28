@@ -85,7 +85,6 @@ namespace MovieTicketBookingSystem.Services.Implementation
             payment.GatewaySignature = dto.RazorpaySignature;
             payment.Status = PaymentStatus.Paid;
             payment.PaidAt = DateTime.UtcNow;
-
             _paymentRepo.Update(payment);
 
             var booking = _bookingRepo.GetById(payment.BookingId);
@@ -94,14 +93,14 @@ namespace MovieTicketBookingSystem.Services.Implementation
 
             _bookingRepo.Update(booking);
 
-            var seats = _seatStatusRepo.GetSeatsByBookingId(booking.BookingId);
+            
 
-            foreach (var seat in seats)
+            foreach (var b in booking.BookingSeats)
             {
+                ShowSeatStatus seat = _seatStatusRepo.getById(b.ShowSeatStatusId);
                 var oldStatus = seat.Status;
-
                 seat.Status = SeatStatus.Booked;
-                seat.PriceAtBooking = seat.Seat.Price;
+                seat.PriceAtBooking = seat.PriceAtBooking;
                 seat.LastUpdatedAt = DateTime.UtcNow;
 
                 _seatStatusRepo.Update(seat);
