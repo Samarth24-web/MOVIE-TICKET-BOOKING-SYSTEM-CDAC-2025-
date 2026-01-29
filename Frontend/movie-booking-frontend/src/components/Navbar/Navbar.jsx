@@ -10,6 +10,15 @@ const Navbar = ({ isAdmin = false, isManager = false }) => {
 
   const city = localStorage.getItem("city");
 
+  // Function to handle logo click based on role
+  const handleLogoClick = () => {
+    const role = localStorage.getItem("role");
+
+    if (role === "Admin") navigate("/admin");
+    else if (role === "TheatreManager") navigate("/manager");
+    else navigate("/"); // regular user
+  };
+
   return (
     <>
       <nav
@@ -26,9 +35,9 @@ const Navbar = ({ isAdmin = false, isManager = false }) => {
         {/* Logo */}
         <div
           style={{ fontWeight: "bold", fontSize: "22px", cursor: "pointer" }}
-          onClick={() => navigate("/")}
+          onClick={handleLogoClick} // Updated
         >
-          book<span style={{ color: "#f84464" }}>my</span>show
+          Movie<span style={{ color: "#f84464" }}>Mitra</span>
         </div>
 
         {/* Search bar (User only) */}
@@ -84,9 +93,7 @@ const Navbar = ({ isAdmin = false, isManager = false }) => {
       {showCityModal && (
         <CitySelectorModal onClose={() => setShowCityModal(false)} />
       )}
-      {showProfile && (
-        <ProfileSidebar onClose={() => setShowProfile(false)} />
-      )}
+      {showProfile && <ProfileSidebar onClose={() => setShowProfile(false)} />}
     </>
   );
 };

@@ -60,10 +60,13 @@ const Login = () => {
       <h2>Sign in</h2>
 
       <input
+        type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         style={inputStyle}
+        required
+        pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
       />
 
       <input
@@ -72,6 +75,8 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         style={inputStyle}
+        required
+        minLength={6}
       />
 
       <button onClick={handleLogin} style={buttonStyle}>

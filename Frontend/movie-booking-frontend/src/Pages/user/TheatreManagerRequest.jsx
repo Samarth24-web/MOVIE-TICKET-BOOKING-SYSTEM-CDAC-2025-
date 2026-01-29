@@ -95,6 +95,7 @@ const TheatreManagerRequest = () => {
           <select
             style={input}
             value={form.cityId}
+            required
             onChange={(e) =>
               setForm({ ...form, cityId: e.target.value })
             }
@@ -111,6 +112,7 @@ const TheatreManagerRequest = () => {
           <input
             style={input}
             value={form.theatreName}
+            required
             onChange={(e) =>
               setForm({ ...form, theatreName: e.target.value })
             }
@@ -118,8 +120,10 @@ const TheatreManagerRequest = () => {
 
           <label style={label}>Theatre Address URL (Google Maps)</label>
           <input
+            type="url"
             style={input}
             value={form.theaterAddressUrl}
+            required
             onChange={(e) =>
               setForm({
                 ...form,
@@ -132,6 +136,7 @@ const TheatreManagerRequest = () => {
           <textarea
             style={{ ...input, height: 80 }}
             value={form.address}
+            required
             onChange={(e) =>
               setForm({ ...form, address: e.target.value })
             }
@@ -141,6 +146,7 @@ const TheatreManagerRequest = () => {
           <select
             style={input}
             value={form.govtIdType}
+            required
             onChange={(e) =>
               setForm({ ...form, govtIdType: e.target.value })
             }
@@ -153,10 +159,13 @@ const TheatreManagerRequest = () => {
             </option>
           </select>
 
-          <label style={label}>Government ID Number</label>
+          <label style={label}>Government ID Number (Aadhaar)</label>
           <input
             style={input}
             value={form.govtIdNumber}
+            required
+            pattern="^[0-9]{12}$"
+            title="Aadhaar number must be 12 digits"
             onChange={(e) =>
               setForm({
                 ...form,
@@ -167,6 +176,7 @@ const TheatreManagerRequest = () => {
 
           <label style={label}>Proof Document URL</label>
           <input
+            type="url"
             style={input}
             placeholder="https://example.com/document"
             value={form.proofDoc}

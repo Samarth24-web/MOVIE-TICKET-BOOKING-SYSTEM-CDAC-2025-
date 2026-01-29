@@ -42,8 +42,8 @@ const PastShows = () => {
           <p>Screen: {s.screenName}</p>
           <p>
             {dayjs(s.showDate).format("DD MMM YYYY")} |{" "}
-            {dayjs(s.startTime, "HH:mm:ss").format("hh:mm A")} –{" "}
-            {dayjs(s.endTime, "HH:mm:ss").format("hh:mm A")}
+             {dayjs(`2026-01-30T${s.startTime}`).format("hh:mm A")} –{" "}
+            {dayjs(`2026-01-30T${s.endTime}`).format("hh:mm A")}
           </p>
         </div>
       ))}
