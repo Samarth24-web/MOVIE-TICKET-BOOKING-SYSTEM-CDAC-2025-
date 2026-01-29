@@ -23,8 +23,8 @@ namespace MovieTicketBookingSystem.Repository.Implementation
 
         public List<TheatreManagerRequest> GetAll()
         {
-            return _context.TheatreManagerRequests
-                .Include(x => x.City)
+            if (_context.TheatreManagerRequests == null) return null;
+            else return _context.TheatreManagerRequests
                 .ToList();
         }
 

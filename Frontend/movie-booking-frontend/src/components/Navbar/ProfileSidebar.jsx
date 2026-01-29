@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 const ProfileSidebar = ({ onClose }) => {
   const navigate = useNavigate();
 
+  const role = localStorage.getItem("role"); // User | Admin | TheatreManager
+
   const logout = () => {
     localStorage.clear();
     navigate("/login");
@@ -24,22 +26,35 @@ const ProfileSidebar = ({ onClose }) => {
     >
       <button onClick={onClose}>✖</button>
 
+      {/* PROFILE */}
       <div
-        style={{ marginTop: "20px", cursor: "pointer" }}
+        style={menuItem}
         onClick={() => navigate("/profile")}
       >
         View Profile
       </div>
 
+      {/* BOOKINGS */}
       <div
-        style={{ marginTop: "20px", cursor: "pointer" }}
+        style={menuItem}
         onClick={() => navigate("/my-bookings")}
       >
         My Bookings
       </div>
 
+      {/* THEATRE MANAGER REQUEST (ONLY FOR USERS) */}
+      {role === "User" && (
+        <div
+          style={menuItem}
+          onClick={() => navigate("/theaterManagerRequest")}
+        >
+          Theatre Manager Request
+        </div>
+      )}
+
+      {/* LOGOUT */}
       <div
-        style={{ marginTop: "20px", cursor: "pointer", color: "red" }}
+        style={{ ...menuItem, color: "red" }}
         onClick={logout}
       >
         Logout
@@ -49,3 +64,10 @@ const ProfileSidebar = ({ onClose }) => {
 };
 
 export default ProfileSidebar;
+
+/* ================= STYLES ================= */
+const menuItem = {
+  marginTop: "20px",
+  cursor: "pointer",
+  fontWeight: 500,
+};

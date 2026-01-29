@@ -12,15 +12,15 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  if(localStorage.getItem("token")){
-    if(localStorage.getItem("role")==="Admin"){
-      navigate("/admin");
-    }else if(localStorage.getItem("role")==="TheatreManager"){
-      navigate("/manager");
-    } else{
-      navigate("/");
-    }
-  }
+  // if(localStorage.getItem("token")){
+  //   if(localStorage.getItem("role")==="Admin"){
+  //     navigate("/admin");
+  //   }else if(localStorage.getItem("role")==="TheatreManager"){
+  //     navigate("/manager");
+  //   } else{
+  //     navigate("/");
+  //   }
+  // }
 
   const handleLogin = async () => {
     if (!email.includes("@")) {

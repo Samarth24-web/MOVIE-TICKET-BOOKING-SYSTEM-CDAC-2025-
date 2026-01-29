@@ -15,17 +15,17 @@ namespace MovieTicketBookingSystem.Models
 
         public string TheatreName { get; set; }
         public string TheaterAddressUrl { get; set; }
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
-        public string GovtIdType { get; set; }
+        public string? GovtIdType { get; set; }
         public string GovtIdNumber { get; set; }
-        public string ProofDocUrl { get; set; }
+        public string? ProofDocUrl { get; set; }
 
         public string? Status { get; set; }
         public long? ReviewedByAdminId { get; set; }
 
         public string? RejectionReason { get; set; }
-        public DateTime RequestedAt { get; set; }
+        public DateTime? RequestedAt { get; set; }
         public DateTime? ReviewedAt { get; set; }
         [JsonIgnore]
         [ForeignKey("UserId")]

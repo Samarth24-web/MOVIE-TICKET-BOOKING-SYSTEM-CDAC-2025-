@@ -28,6 +28,7 @@ import MyBookings from "../Pages/user/MyBookings";
 import Profile from "../pages/user/Profile";
 import Notifications from "../Pages/user/Notifications";
 import SeatSelection from "../Pages/user/SeatSelection";
+import TheatreManagerRequest from "../Pages/user/TheatreManagerRequest";
 
 // Admin pages
 import AdminDashboard from "../pages/admin/AdminDashboard";
@@ -78,6 +79,7 @@ const AppRoutes = () => {
               <Route path="/my-bookings" element={<MyBookings />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/notifications" element={<Notifications />} />
+              <Route path="/theaterManagerRequest" element={<TheatreManagerRequest />} />
             </Route>
           </Route>
 

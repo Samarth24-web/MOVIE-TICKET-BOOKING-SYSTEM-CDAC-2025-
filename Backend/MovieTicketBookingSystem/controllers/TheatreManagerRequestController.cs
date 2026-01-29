@@ -19,7 +19,7 @@ namespace MovieTicketBookingSystem.controllers
         [HttpPost]
         [Route("{UserId}")]
         [Authorize(Roles = "User")]
-        public IActionResult Create(TheatreManagerRequest request, long UserId)
+        public IActionResult Create([FromBody] TheatreManagerRequest request, long UserId)
         {
             var result = _service.CreateRequest(request, UserId);
             return Ok(result);

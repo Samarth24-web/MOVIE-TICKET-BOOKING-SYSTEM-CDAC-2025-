@@ -14,8 +14,31 @@ const Register = () => {
   });
 
   const handleSubmit = async () => {
-    if (!form.email.includes("@")) {
-      toast.error("Invalid email");
+    const { userName, email, phone, password } = form;
+
+    // 1️⃣ Empty field validation
+    if (!userName || !email || !phone || !password) {
+      toast.error("All fields are required");
+      return;
+    }
+
+    // 2️⃣ Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Enter a valid email address");
+      return;
+    }
+
+    // 3️⃣ Phone number validation (10 digits only)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Phone number must be 10 digits");
+      return;
+    }
+
+    // 4️⃣ Password length validation
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
       return;
     }
 
@@ -23,7 +46,9 @@ const Register = () => {
       await registerApi(form);
       toast.success("Registration successful");
       navigate("/login");
-    } catch {}
+    } catch {
+      toast.error("Registration failed");
+    }
   };
 
   return (
