@@ -1,0 +1,700 @@
+-- Creating a database
+CREATE DATABASE MovieBookingDB;
+
+USE MovieBookingDB;
+
+-- Creating role table
+CREATE TABLE Roles (
+    RoleId INT IDENTITY(1,1) PRIMARY KEY,
+    RoleName VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Inserting roles in the roles table
+INSERT INTO Roles (RoleName)
+VALUES 
+('User'),
+('TheatreManager'),
+('Admin');
+
+-- Creating user table
+CREATE TABLE Users (
+    UserId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    UserName VARCHAR(150) NOT NULL,
+    Email VARCHAR(150) UNIQUE NOT NULL,
+    Phone VARCHAR(20) UNIQUE NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    RoleId INT NOT NULL DEFAULT 1,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+
+    CONSTRAINT FK_User_Role
+    FOREIGN KEY (RoleId) REFERENCES Roles(RoleId)
+);
+
+-- Creating city table 
+CREATE TABLE Cities (
+    CityId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    CityName VARCHAR(100) NOT NULL,
+    StateName VARCHAR(100) NOT NULL,
+    CountryName VARCHAR(100) NOT NULL,
+    IsActive BIT DEFAULT 1,
+
+    CONSTRAINT UQ_City_State_Country 
+    UNIQUE (CityName, StateName, CountryName)
+);
+
+-- Adding data in cities table
+INSERT INTO Cities (CityName, StateName, CountryName)
+VALUES
+-- Maharashtra
+('Mumbai','Maharashtra','India'),
+('Pune','Maharashtra','India'),
+('Nagpur','Maharashtra','India'),
+('Nashik','Maharashtra','India'),
+('Aurangabad','Maharashtra','India'),
+('Solapur','Maharashtra','India'),
+('Kolhapur','Maharashtra','India'),
+('Amravati','Maharashtra','India'),
+('Thane','Maharashtra','India'),
+('Satara','Maharashtra','India'),
+
+-- Delhi
+('Delhi','Delhi','India'),
+('New Delhi','Delhi','India'),
+
+-- Karnataka
+('Bengaluru','Karnataka','India'),
+('Mysuru','Karnataka','India'),
+('Mangaluru','Karnataka','India'),
+('Hubli','Karnataka','India'),
+('Belagavi','Karnataka','India'),
+('Ballari','Karnataka','India'),
+
+-- Tamil Nadu
+('Chennai','Tamil Nadu','India'),
+('Coimbatore','Tamil Nadu','India'),
+('Madurai','Tamil Nadu','India'),
+('Salem','Tamil Nadu','India'),
+('Tiruchirappalli','Tamil Nadu','India'),
+('Erode','Tamil Nadu','India'),
+('Vellore','Tamil Nadu','India'),
+
+-- Telangana
+('Hyderabad','Telangana','India'),
+('Warangal','Telangana','India'),
+('Karimnagar','Telangana','India'),
+('Nizamabad','Telangana','India'),
+('Khammam','Telangana','India'),
+
+-- Andhra Pradesh
+('Visakhapatnam','Andhra Pradesh','India'),
+('Vijayawada','Andhra Pradesh','India'),
+('Guntur','Andhra Pradesh','India'),
+('Tirupati','Andhra Pradesh','India'),
+('Nellore','Andhra Pradesh','India'),
+
+-- Gujarat
+('Ahmedabad','Gujarat','India'),
+('Surat','Gujarat','India'),
+('Vadodara','Gujarat','India'),
+('Rajkot','Gujarat','India'),
+('Bhavnagar','Gujarat','India'),
+('Jamnagar','Gujarat','India'),
+
+-- Rajasthan
+('Jaipur','Rajasthan','India'),
+('Udaipur','Rajasthan','India'),
+('Jodhpur','Rajasthan','India'),
+('Kota','Rajasthan','India'),
+('Bikaner','Rajasthan','India'),
+('Ajmer','Rajasthan','India'),
+
+-- West Bengal
+('Kolkata','West Bengal','India'),
+('Howrah','West Bengal','India'),
+('Durgapur','West Bengal','India'),
+('Siliguri','West Bengal','India'),
+('Asansol','West Bengal','India'),
+
+-- Punjab
+('Amritsar','Punjab','India'),
+('Ludhiana','Punjab','India'),
+('Jalandhar','Punjab','India'),
+('Patiala','Punjab','India'),
+('Bathinda','Punjab','India'),
+
+-- Haryana
+('Gurgaon','Haryana','India'),
+('Faridabad','Haryana','India'),
+('Panipat','Haryana','India'),
+('Ambala','Haryana','India'),
+
+-- Uttar Pradesh
+('Lucknow','Uttar Pradesh','India'),
+('Kanpur','Uttar Pradesh','India'),
+('Varanasi','Uttar Pradesh','India'),
+('Agra','Uttar Pradesh','India'),
+('Prayagraj','Uttar Pradesh','India'),
+('Meerut','Uttar Pradesh','India'),
+('Noida','Uttar Pradesh','India'),
+('Ghaziabad','Uttar Pradesh','India'),
+
+-- Bihar
+('Patna','Bihar','India'),
+('Gaya','Bihar','India'),
+('Muzaffarpur','Bihar','India'),
+('Bhagalpur','Bihar','India'),
+
+-- Madhya Pradesh
+('Bhopal','Madhya Pradesh','India'),
+('Indore','Madhya Pradesh','India'),
+('Jabalpur','Madhya Pradesh','India'),
+('Gwalior','Madhya Pradesh','India'),
+('Ujjain','Madhya Pradesh','India'),
+
+-- Odisha
+('Bhubaneswar','Odisha','India'),
+('Cuttack','Odisha','India'),
+('Rourkela','Odisha','India'),
+('Sambalpur','Odisha','India'),
+
+-- Assam
+('Guwahati','Assam','India'),
+('Silchar','Assam','India'),
+('Dibrugarh','Assam','India'),
+
+-- Jharkhand
+('Ranchi','Jharkhand','India'),
+('Jamshedpur','Jharkhand','India'),
+('Dhanbad','Jharkhand','India'),
+
+-- Kerala
+('Thiruvananthapuram','Kerala','India'),
+('Kochi','Kerala','India'),
+('Kozhikode','Kerala','India'),
+('Thrissur','Kerala','India'),
+('Kollam','Kerala','India'),
+
+-- Chhattisgarh
+('Raipur','Chhattisgarh','India'),
+('Bilaspur','Chhattisgarh','India'),
+('Durg','Chhattisgarh','India'),
+
+-- Uttarakhand
+('Dehradun','Uttarakhand','India'),
+('Haridwar','Uttarakhand','India'),
+('Roorkee','Uttarakhand','India'),
+
+-- Himachal Pradesh
+('Shimla','Himachal Pradesh','India'),
+('Solan','Himachal Pradesh','India'),
+('Mandi','Himachal Pradesh','India'),
+
+-- Jammu & Kashmir
+('Srinagar','Jammu and Kashmir','India'),
+('Jammu','Jammu and Kashmir','India'),
+
+-- Goa
+('Panaji','Goa','India'),
+('Margao','Goa','India'),
+
+-- North East
+('Imphal','Manipur','India'),
+('Aizawl','Mizoram','India'),
+('Kohima','Nagaland','India'),
+('Shillong','Meghalaya','India'),
+('Agartala','Tripura','India'),
+('Itanagar','Arunachal Pradesh','India'),
+('Gangtok','Sikkim','India');
+
+-- Creating theater manager request table
+CREATE TABLE TheatreManagerRequests (
+    RequestId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    UserId BIGINT NOT NULL,
+    CityId BIGINT NOT NULL,
+    TheatreName VARCHAR(150) NOT NULL,
+    TheaterAddressUrl VARCHAR(500) NOT NULL UNIQUE,
+    Address TEXT NOT NULL,
+    GovtIdType VARCHAR(50) NOT NULL,
+    GovtIdNumber VARCHAR(100) UNIQUE NOT NULL,
+    ProofDocUrl VARCHAR(300),
+    Status VARCHAR(20) DEFAULT 'Pending',
+    ReviewedByAdminId BIGINT,
+    RejectionReason VARCHAR(200),
+    RequestedAt DATETIME DEFAULT GETDATE(),
+    ReviewedAt DATETIME,
+
+    FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    FOREIGN KEY (CityId) REFERENCES Cities(CityId),
+    FOREIGN KEY (ReviewedByAdminId) REFERENCES Users(UserId)
+);
+
+-- Creating theater table
+CREATE TABLE Theatres (
+    TheatreId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    TheatreName VARCHAR(150) NOT NULL,
+    TheaterAddressUrl VARCHAR(500) NOT NULL UNIQUE,
+    Address TEXT NOT NULL,
+    CityId BIGINT NOT NULL,
+    ManagerId BIGINT NOT NULL,
+    ApprovedByAdminId BIGINT,
+
+    FOREIGN KEY (CityId) REFERENCES Cities(CityId),
+    FOREIGN KEY (ManagerId) REFERENCES Users(UserId),
+    FOREIGN KEY (ApprovedByAdminId) REFERENCES Users(UserId)
+);
+
+-- Creating screen type table
+CREATE TABLE ScreenTypes (
+    ScreenTypeId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    TypeName VARCHAR(50) UNIQUE NOT NULL
+);
+
+INSERT INTO ScreenTypes (TypeName)
+VALUES
+('Normal'),
+('2D'),
+('3D'),
+('IMAX');
+
+-- Creating screens table
+CREATE TABLE Screens (
+    ScreenId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    ScreenName VARCHAR(100) NOT NULL,
+    TheatreId BIGINT NOT NULL,
+    ScreenTypeId BIGINT NOT NULL,
+    TotalSeats INT NOT NULL,
+
+    FOREIGN KEY (TheatreId) REFERENCES Theatres(TheatreId),
+    FOREIGN KEY (ScreenTypeId) REFERENCES ScreenTypes(ScreenTypeId)
+);
+
+-- Creating seat type table
+CREATE TABLE SeatTypes (
+    SeatTypeId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    TypeName VARCHAR(50) UNIQUE NOT NULL,
+    BasePrice DECIMAL(10,2) NOT NULL
+);
+
+-- Inserting data in seat type table
+INSERT INTO SeatTypes (TypeName, BasePrice)
+VALUES
+('Regular', 150),
+('Premium', 250),
+('Recliner', 300),
+('VIP', 500);
+
+-- Creating seat row table
+CREATE TABLE SeatRows (
+    SeatRowId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    RowName VARCHAR(10) NOT NULL,
+    RowOrder INT NOT NULL,
+    ScreenId BIGINT NOT NULL,
+
+    FOREIGN KEY (ScreenId) REFERENCES Screens(ScreenId)
+);
+
+-- Creating seat table
+CREATE TABLE Seats (
+    SeatId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    SeatNumber VARCHAR(10) NOT NULL,
+    SeatRowId BIGINT NOT NULL,
+    SeatTypeId BIGINT NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+
+    FOREIGN KEY (SeatRowId) REFERENCES SeatRows(SeatRowId),
+    FOREIGN KEY (SeatTypeId) REFERENCES SeatTypes(SeatTypeId)
+);
+
+-- Creating genre table
+CREATE TABLE Genres (
+    GenreId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    GenreName VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Adding data to the genre table
+INSERT INTO Genres (GenreName)
+VALUES
+-- Core genres
+('Action'),
+('Adventure'),
+('Comedy'),
+('Drama'),
+('Romance'),
+('Thriller'),
+('Horror'),
+('Mystery'),
+('Crime'),
+('Fantasy'),
+('Science Fiction'),
+('Animation'),
+('Family'),
+('Musical'),
+('Biography'),
+('History'),
+('War'),
+('Western'),
+
+-- Sub genres
+('Superhero'),
+('Psychological Thriller'),
+('Romantic Comedy'),
+('Dark Comedy'),
+('Political Drama'),
+('Courtroom Drama'),
+('Medical Drama'),
+('Teen Drama'),
+('Sports Drama'),
+
+-- Indian cinema genres
+('Mythological'),
+('Devotional'),
+('Social Drama'),
+('Masala'),
+('Period Drama'),
+('Patriotic'),
+('Freedom Fighter'),
+('Rural Drama'),
+('Urban Drama'),
+
+-- Special categories
+('Noir'),
+('Heist'),
+('Spy'),
+('Detective'),
+('Slasher'),
+('Survival'),
+('Zombie'),
+('Disaster'),
+('Time Travel'),
+
+-- Art & experimental
+('Art Film'),
+('Experimental'),
+('Docudrama'),
+('Mockumentary'),
+
+-- Documentary
+('Documentary'),
+('Nature Documentary'),
+('Biopic Documentary'),
+
+-- Kids & educational
+('Kids'),
+('Educational'),
+('Fairy Tale'),
+
+-- Regional styles
+('Folk'),
+('Village Drama'),
+('Tribal'),
+
+-- New age
+('OTT Original'),
+('Web Series'),
+('Short Film');
+
+-- Creating Languages table
+CREATE TABLE Languages (
+    LanguageId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    LanguageName VARCHAR(100) UNIQUE NOT NULL
+);
+
+INSERT INTO Languages (LanguageName)
+VALUES
+-- Indian languages
+('Hindi'),
+('Marathi'),
+('Tamil'),
+('Telugu'),
+('Kannada'),
+('Malayalam'),
+('Punjabi'),
+('Gujarati'),
+('Bengali'),
+('Odia'),
+('Assamese'),
+('Bhojpuri'),
+('Rajasthani'),
+('Haryanvi'),
+('Konkani'),
+('Tulu'),
+('Manipuri'),
+('Khasi'),
+('Mizo'),
+('Naga'),
+('Kashmiri'),
+('Dogri'),
+('Santhali'),
+('Maithili'),
+('Chhattisgarhi'),
+('Garhwali'),
+('Kumaoni'),
+('Braj'),
+('Awadhi'),
+('Magahi'),
+('Angika'),
+
+-- International languages
+('English'),
+('Spanish'),
+('French'),
+('German'),
+('Italian'),
+('Portuguese'),
+('Russian'),
+('Chinese'),
+('Mandarin'),
+('Cantonese'),
+('Japanese'),
+('Korean'),
+('Thai'),
+('Vietnamese'),
+('Indonesian'),
+('Malay'),
+('Filipino'),
+('Arabic'),
+('Hebrew'),
+('Persian'),
+('Turkish'),
+('Greek'),
+('Dutch'),
+('Swedish'),
+('Norwegian'),
+('Danish'),
+('Finnish'),
+('Polish'),
+('Czech'),
+('Hungarian'),
+('Romanian'),
+('Bulgarian'),
+('Serbian'),
+('Croatian'),
+('Slovak'),
+('Slovenian'),
+('Ukrainian'),
+('Lithuanian'),
+('Latvian'),
+('Estonian');
+
+-- Creating movies table
+CREATE TABLE Movies (
+    MovieId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    Title VARCHAR(200) NOT NULL,
+    Duration INT NOT NULL,
+    Rating DECIMAL(3,1),
+    Description TEXT,
+    ReleaseDate DATE
+);
+
+-- Inserting movies records
+INSERT INTO Movies (Title, Duration, Rating, Description, ReleaseDate)
+VALUES
+('Pathaan',146,7.2,'Action spy thriller','2023-01-25'),
+('KGF Chapter 2',168,8.3,'Gangster action drama','2022-04-14'),
+('RRR',182,8.0,'Historical action drama','2022-03-25'),
+('Jawan',169,7.5,'Action political thriller','2023-09-07'),
+('Pushpa',179,7.6,'Smuggler action drama','2021-12-17'),
+('3 Idiots',171,8.4,'College comedy drama','2009-12-25'),
+('Bahubali',159,8.0,'Epic fantasy drama','2015-07-10'),
+('Bahubali 2',171,8.2,'Epic war drama','2017-04-28'),
+('Dangal',161,8.4,'Sports biography','2016-12-23'),
+('Chak De India',153,8.1,'Sports patriotic drama','2007-08-10'),
+
+('Shershaah',135,8.3,'War biopic','2021-08-12'),
+('Andhadhun',139,8.2,'Crime thriller','2018-10-05'),
+('Drishyam',163,8.2,'Mystery crime drama','2015-07-31'),
+('Vikram',175,8.5,'Action thriller','2022-06-03'),
+('Leo',165,7.9,'Crime action','2023-10-19'),
+
+('Interstellar',169,8.6,'Sci-fi space adventure','2014-11-07'),
+('Inception',148,8.8,'Sci-fi thriller','2010-07-16'),
+('Avatar',162,7.9,'Fantasy sci-fi','2009-12-18'),
+('Avengers Endgame',181,8.4,'Superhero action','2019-04-26'),
+('Joker',122,8.4,'Psychological crime','2019-10-04'),
+
+('Parasite',132,8.6,'Dark comedy thriller','2019-05-30'),
+('Your Name',106,8.4,'Romantic fantasy','2016-08-26'),
+('Spirited Away',125,8.6,'Animated fantasy','2001-07-20'),
+('Titanic',195,7.9,'Romantic disaster','1997-12-19'),
+('The Dark Knight',152,9.0,'Superhero crime','2008-07-18'),
+
+('Rockstar',159,7.7,'Musical romance','2011-11-11'),
+('Kabir Singh',173,7.1,'Romantic drama','2019-06-21'),
+('PK',153,8.1,'Comedy social drama','2014-12-19'),
+('Lagaan',224,8.1,'Sports historical','2001-06-15'),
+('Swades',210,8.2,'Patriotic drama','2004-12-17');
+
+-- Creating movie genre mapping table
+CREATE TABLE MovieGenreMap (
+    MovieId BIGINT,
+    GenreId BIGINT,
+
+    PRIMARY KEY (MovieId, GenreId),
+    FOREIGN KEY (MovieId) REFERENCES Movies(MovieId),
+    FOREIGN KEY (GenreId) REFERENCES Genres(GenreId)
+);
+
+-- Inserting genre mappings
+INSERT INTO MovieGenreMap (MovieId, GenreId)
+VALUES
+(1,1),(1,43),     -- Pathaan → Action, Spy
+(2,1),(2,32),     -- KGF → Action, Masala
+(3,1),(3,35),     -- RRR → Action, Patriotic
+(4,1),(4,25),     -- Jawan → Action, Political Drama
+(5,1),(5,32),     -- Pushpa → Action, Masala
+(6,3),(6,4),      -- 3 Idiots → Comedy, Drama
+(7,10),(7,32),    -- Bahubali → Fantasy, Masala
+(8,10),(8,17),    -- Bahubali2 → Fantasy, War
+(9,28),(9,15),    -- Dangal → Sports Drama, Biography
+(10,28),(10,35),  -- Chak De → Sports, Patriotic
+
+(11,17),(11,15),  -- Shershaah → War, Biography
+(12,6),(12,9),    -- Andhadhun → Thriller, Crime
+(13,8),(13,9),    -- Drishyam → Mystery, Crime
+(14,1),(14,6),    -- Vikram → Action, Thriller
+(15,1),(15,9),    -- Leo → Action, Crime
+
+(16,11),(16,2),   -- Interstellar → Sci-fi, Adventure
+(17,11),(17,6),   -- Inception → Sci-fi, Thriller
+(18,10),(18,11),  -- Avatar → Fantasy, Sci-fi
+(19,19),(19,1),   -- Endgame → Superhero, Action
+(20,20),(20,9),   -- Joker → Psychological, Crime
+
+(21,22),(21,6),   -- Parasite → Dark Comedy, Thriller
+(22,5),(22,10),   -- Your Name → Romance, Fantasy
+(23,12),(23,10),  -- Spirited Away → Animation, Fantasy
+(24,46),(24,5),   -- Titanic → Disaster, Romance
+(25,19),(25,9),   -- Dark Knight → Superhero, Crime
+
+(26,14),(26,5),   -- Rockstar → Musical, Romance
+(27,5),(27,4),    -- Kabir Singh → Romance, Drama
+(28,3),(28,30),   -- PK → Comedy, Social Drama
+(29,28),(29,16),  -- Lagaan → Sports, History
+(30,35),(30,4);   -- Swades → Patriotic, Drama
+
+-- Creating movie language mapping table
+CREATE TABLE MovieLanguageMap (
+    MovieId BIGINT,
+    LanguageId BIGINT,
+
+    PRIMARY KEY (MovieId, LanguageId),
+    FOREIGN KEY (MovieId) REFERENCES Movies(MovieId),
+    FOREIGN KEY (LanguageId) REFERENCES Languages(LanguageId)
+);
+
+-- Inserting language Mapping
+INSERT INTO MovieLanguageMap (MovieId, LanguageId)
+VALUES
+(1,1),(2,5),(3,4),(4,1),(5,4),
+(6,1),(7,5),(8,5),(9,1),(10,1),
+
+(11,1),(12,1),(13,1),(14,3),(15,3),
+
+(16,32),(17,32),(18,32),(19,32),(20,32),
+
+(21,42),(22,44),(23,44),(24,32),(25,32),
+
+(26,1),(27,1),(28,1),(29,1),(30,1);
+
+-- Creating shows table
+CREATE TABLE Shows (
+    ShowId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    MovieId BIGINT NOT NULL,
+    ScreenId BIGINT NOT NULL,
+    LanguageId BIGINT NOT NULL,   -- NEW COLUMN
+    ShowDate DATE NOT NULL,
+    StartTime TIME NOT NULL,
+    EndTime TIME NOT NULL,
+    CreatedByManagerId BIGINT,
+
+    FOREIGN KEY (MovieId) REFERENCES Movies(MovieId),
+    FOREIGN KEY (ScreenId) REFERENCES Screens(ScreenId),
+    FOREIGN KEY (LanguageId) REFERENCES Languages(LanguageId),
+    FOREIGN KEY (CreatedByManagerId) REFERENCES Users(UserId)
+);
+
+-- Creating booking TABLE
+CREATE TABLE Bookings (
+    BookingId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    UserId BIGINT NOT NULL,
+    ShowId BIGINT NOT NULL,
+    TotalAmount DECIMAL(10,2) NOT NULL,
+    Status VARCHAR(20) DEFAULT 'PENDING',
+    BookedAt DATETIME,
+    CancelledAt DATETIME,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    FOREIGN KEY (ShowId) REFERENCES Shows(ShowId)
+);
+
+-- Creating booking seats table 
+CREATE TABLE BookingSeats (
+    BookingSeatId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    BookingId BIGINT NOT NULL,
+    SeatId BIGINT NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+
+    FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId),
+    FOREIGN KEY (SeatId) REFERENCES Seats(SeatId)
+);
+
+-- Creating payment table
+CREATE TABLE Payments (
+    PaymentId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    BookingId BIGINT NOT NULL,
+    GatewayName VARCHAR(50),
+    GatewayOrderId VARCHAR(100),
+    GatewayPaymentId VARCHAR(100),
+    GatewaySignature VARCHAR(255),
+    Amount DECIMAL(10,2),
+    Currency VARCHAR(10),
+    PaymentMethod VARCHAR(20),
+    Status VARCHAR(20),
+    FailureReason VARCHAR(200),
+    PaidAt DATETIME,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId)
+);
+
+-- Creating show Seat Status table
+CREATE TABLE ShowSeatStatus (
+    ShowSeatStatusId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    ShowId BIGINT NOT NULL,
+    SeatId BIGINT NOT NULL,
+    Status VARCHAR(20) NOT NULL,
+    LockedByUserId BIGINT,
+    LockStartTime DATETIME,
+    LockExpiryTime DATETIME,
+    BookingId BIGINT,
+    PriceAtBooking DECIMAL(10,2),
+    LastUpdatedAt DATETIME DEFAULT GETDATE(),
+    IsActive BIT DEFAULT 1,
+
+    CONSTRAINT UQ_ShowSeat UNIQUE (ShowId, SeatId),
+
+    FOREIGN KEY (ShowId) REFERENCES Shows(ShowId),
+    FOREIGN KEY (SeatId) REFERENCES Seats(SeatId),
+    FOREIGN KEY (LockedByUserId) REFERENCES Users(UserId),
+    FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId)
+);
+
+-- Creating show Seat Status Logs TABLE
+CREATE TABLE SeatStatusLogs (
+    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    ShowId BIGINT NOT NULL,
+    SeatId BIGINT NOT NULL,
+    OldStatus VARCHAR(20),
+    NewStatus VARCHAR(20),
+    ChangedByUserId BIGINT,
+    ChangeReason VARCHAR(150),
+    BookingId BIGINT,
+    IsSystemAction BIT DEFAULT 0,
+    ChangedAt DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (ShowId) REFERENCES Shows(ShowId),
+    FOREIGN KEY (SeatId) REFERENCES Seats(SeatId),
+    FOREIGN KEY (ChangedByUserId) REFERENCES Users(UserId),
+    FOREIGN KEY (BookingId) REFERENCES Bookings(BookingId)
+);
