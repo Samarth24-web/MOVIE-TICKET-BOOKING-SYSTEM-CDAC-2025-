@@ -12,9 +12,9 @@ namespace MovieTicketBookingSystem.Services.Implementation
             _genereRepository = genereRepository;
         }
 
-        internal object getGenereById(long genreId)
+        public List<Genre> GetAll()
         {
-            throw new NotImplementedException();
+            return _genereRepository.FindAll();
         }
 
         Genre IGenreService.getGenereById(long genreId)

@@ -36,5 +36,13 @@ namespace MovieTicketBookingSystem.Repository.Implementation
             User? user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Email == email);
             return await Task.FromResult(user);
         }
+
+        public User GetById(long id)
+        {
+            return _context.Users
+                .Include(u => u.Role)
+                .FirstOrDefault(u => u.UserId == id);
+        }
+
     }
 }

@@ -49,6 +49,16 @@ namespace MovieTicketBookingSystem.Repository.Implementation
             _context.Screens.Remove(screen);
             _context.SaveChanges();
         }
+
+        public List<Screen> GetByManager(long managerId)
+        {
+            return _context.Screens
+                .Include(s => s.Theatre)
+                .Where(s => s.Theatre.ManagerId == managerId)
+                .ToList();
+        }
+
+
     }
 
 }

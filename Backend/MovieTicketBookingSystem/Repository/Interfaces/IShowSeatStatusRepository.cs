@@ -6,6 +6,11 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
     {
         void AddRange(List<ShowSeatStatus> statuses);
         List<ShowSeatStatus> GetByShow(long showId);
+        List<ShowSeatStatus> GetByIds(List<long> showSeatStatusIds);
+        void UpdateRange(List<ShowSeatStatus> seats);
+        List<ShowSeatStatus> GetExpiredLockedSeats(DateTime currentTime);
+        List<ShowSeatStatus> GetSeatsByBookingId(long bookingId);
+        void Update(ShowSeatStatus seatStatus);
     }
 
 }

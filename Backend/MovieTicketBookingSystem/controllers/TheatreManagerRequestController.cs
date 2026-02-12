@@ -47,5 +47,13 @@ namespace MovieTicketBookingSystem.controllers
             _service.Reject(requerstId, reason, adminId);
             return Ok("Request rejected");
         }
+
+        [HttpGet("user/{userId}")]
+        public IActionResult GetByUser(long userId)
+        {
+            return Ok(_service.GetByUser(userId));
+        }
+
+
     }
 }

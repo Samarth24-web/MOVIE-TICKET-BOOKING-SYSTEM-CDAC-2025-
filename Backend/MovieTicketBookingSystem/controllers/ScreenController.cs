@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MovieTicketBookingSystem.DTOs;
+using MovieTicketBookingSystem.DTOs.Screen;
 using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Services.Interfaces;
 
@@ -48,6 +48,13 @@ namespace MovieTicketBookingSystem.controllers
             _screenService.DeleteScreen(id);
             return Ok("Screen deleted");
         }
+
+        [HttpGet("manager/{managerId}")]
+        public IActionResult GetByManager(long managerId)
+        {
+            return Ok(_screenService.GetByManager(managerId));
+        }
+
     }
 
 

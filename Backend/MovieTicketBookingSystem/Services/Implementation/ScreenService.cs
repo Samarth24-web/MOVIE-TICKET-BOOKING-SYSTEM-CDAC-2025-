@@ -1,4 +1,4 @@
-﻿using MovieTicketBookingSystem.DTOs;
+﻿using MovieTicketBookingSystem.DTOs.Screen;
 using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Repository.Interfaces;
 using MovieTicketBookingSystem.Services.Interfaces;
@@ -56,6 +56,11 @@ namespace MovieTicketBookingSystem.Services.Implementation
         public void DeleteScreen(long screenId)
         {
             _screenRepository.Delete(screenId);
+        }
+
+        public List<Screen>? GetByManager(long managerId)
+        {
+            return _screenRepository.GetByManager(managerId);
         }
     }
 

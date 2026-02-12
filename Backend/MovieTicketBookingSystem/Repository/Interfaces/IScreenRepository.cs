@@ -9,5 +9,6 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         Screen GetById(long screenId);
         void Update(Screen screen);
         void Delete(long screenId);
+        List<Screen>? GetByManager(long managerId);
     }
 }

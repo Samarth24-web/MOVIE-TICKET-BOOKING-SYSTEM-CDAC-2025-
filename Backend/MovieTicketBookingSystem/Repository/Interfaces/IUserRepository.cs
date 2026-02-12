@@ -8,5 +8,6 @@ namespace MovieTicketBookingSystem.Repository.Interfaces
         Task<bool> hasUniquePhone(string phone);
         Task<User> AddUser(User user);
         Task<User> findByEmail(string email);
+        User GetById(long userId);
     }
 }

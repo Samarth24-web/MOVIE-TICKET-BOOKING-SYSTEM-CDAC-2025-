@@ -1,5 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using MovieTicketBookingSystem.DTOs;
+using MovieTicketBookingSystem.DTOs.Auth;
 using MovieTicketBookingSystem.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

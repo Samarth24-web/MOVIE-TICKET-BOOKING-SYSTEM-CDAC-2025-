@@ -1,4 +1,4 @@
-﻿using MovieTicketBookingSystem.DTOs;
+﻿using MovieTicketBookingSystem.DTOs.Seat;
 using MovieTicketBookingSystem.Models;
 using MovieTicketBookingSystem.Repository.Interfaces;
 using MovieTicketBookingSystem.Services.Interfaces;

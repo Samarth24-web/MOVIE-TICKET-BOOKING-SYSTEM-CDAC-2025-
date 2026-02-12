@@ -1,4 +1,4 @@
-﻿using MovieTicketBookingSystem.DTOs;
+﻿using MovieTicketBookingSystem.DTOs.Movie;
 
 namespace MovieTicketBookingSystem.Services.Interfaces
 {

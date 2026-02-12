@@ -11,22 +11,22 @@ namespace MovieTicketBookingSystem.Models
 
         public long BookingId { get; set; }
 
-        public string GatewayName { get; set; }
-        public string GatewayOrderId { get; set; }
-        public string GatewayPaymentId { get; set; }
-        public string GatewaySignature { get; set; }
+        public string? GatewayName { get; set; }
+        public string? GatewayOrderId { get; set; }
+        public string? GatewayPaymentId { get; set; }
+        public string? GatewaySignature { get; set; }
 
-        public decimal Amount { get; set; }
-        public string Currency { get; set; }
-        public string PaymentMethod { get; set; }
-        public string Status { get; set; }
-        public string FailureReason { get; set; }
+        public decimal? Amount { get; set; }
+        public string? Currency { get; set; }
+        public string? PaymentMethod { get; set; }
+        public string? Status { get; set; }
+        public string? FailureReason { get; set; }
 
         public DateTime? PaidAt { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [ForeignKey("BookingId")]
-        public Booking Booking { get; set; }
+        public Booking? Booking { get; set; }
     }
 
 }
